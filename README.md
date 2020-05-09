@@ -6,6 +6,6 @@ The Workforce Managment System uses the following Libraries:
 - JSON
 - DateTime
 
-## Libraries
+## Dependencies
 The Workforce Managment System uses the following Libraries:
 - Pandas (pip install pandas)
