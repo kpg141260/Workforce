@@ -1,0 +1,69 @@
+{
+    "prompts": {
+        "0001": "Calculating KPIs for maximum transactions volume.",
+        "0002": "Largest transaction volume found on {} at {} with {} calls.",
+        "0003": "Using largest volume of {} transactions for summary calculations.",
+        "0004": "Agents:         {}",
+        "0005": "Utilisation:    {:0.2f}%",
+        "0006": "Trunks:         {}",
+        "0007": "SLA:            {:0.2f}%",
+        "0008": "ASA:            {} sec",
+        "0009": "Abandoned:      {:0.2f}%",
+        "0010": "Queued:         {:0.2f}%",
+        "0011": "Queue Time      {} sec",
+        "0012": "Queue Size      {}"
+    },
+    "errors": {
+        "0001": "The Service Interval (actual is {} min) calculated from data provided in file {} has to be either 15, 30, 45, or 60 min.",
+        "0002": "The Service Interval of {} min specified in the file '{}' does not match the Service Interval of {} min calculated in the file '{}' or it is less than or equal to 0.",
+        "0003": "Input file {} not found!",
+        "0004": "The number of rows in the forecast spreadsheet are different from the framework file. Using spreadsheet parameters.",
+        "0005": "The Service Interval specified in the '{}' spreadsheet is not the same between all time entries.",
+        "0006": "The operations hours {} cannot be 0 or negative. Please check file '{}' Key 'OperationsHours'.",
+        "0007": "SLA {} cannot be less than or equal to 0. Please check file '{}' Key 'SLA'.",
+        "0008": "Answer Time {} cannot be less than or equal to 0. Please check file '{}' Key 'AnswerTime'.",
+        "0009": "Average Active Time {} cannot be less than or equal to 0. Please check file '{}' Key 'TalkTime'.",
+        "0010": "Service Time {} cannot be less than or equal to 0. Please check file '{}' Key 'ServiceTime'.",
+        "0011": "After Transaction Wrap {} cannot be less than or equal to 0. Please check file '{}' Key 'AfterCallWork'.",
+        "0012": "Time to Abandon {} cannot be less than or equal to 0. Please check file '{}' Key 'AbandonTime'.",
+        "0013": "Maximum Allowable Wait Time {} cannot be less than or equal to 0. Please check file '{}' Key 'MaxWait'."
+    },
+    "warnings": {
+        "0001": "Found {} day columns in '{}', but {} 'ForecastDays' are specified in '{}'! Using {} days for forecast."
+    },
+    "fatal": {
+        "0001": "Execution aborted due to Error!"
+    },
+    "info": {
+        "0001": "Found date {:'%Y-%m-%d} in data source.",
+        "0002": "Found {} intervals in data source.",
+        "0003": "XL row count = {}",
+        "0004": "XL Column count = {}",
+        "0005": "Using {} days for forecast.",
+        "0006": "Number of Intervals in each day = {}.",
+        "0007": "Starting to build forecast dictionary.",
+        "0008": "Forecast dictionary successfully built.",
+        "0009": "Execution successfully completed. Have a nice day.",
+        "0010": "Building forecast summary omitted. To enable forecast summary please set 'summary' in 'forecast.conf' to 1.",
+        "0011": "File '{}' successfully saved.",
+        "0012": "Generating forecast data.",
+        "0013": "Creating file '{}'.",
+        "0014": "Forecast successfully built.",
+        "0015": "File '{}' successfully loaded.",
+        "0016": "Path '{}' created.",
+        "0017": "Path '{}' already exists.",
+        "0018": "File '{}' exists.",
+        "0019": "File '{}' created.",
+        "0020": "The following parameters have been specified in the {} file:",
+        "0021": "Building summary forecast spread sheet '{}'.",
+        "0022": "Sheet named '{}' created.",
+        "0023": "Times column written.",
+        "0024": "Date row written.",
+        "0025": "Agent forecast completed.",
+        "0026": "Creating detailed report.",
+        "0027": "Not creating detailed forecast report. Check 'workforce.conf' flag 'excel.report-details' and set to 'true'."
+    },
+    "debug": {
+        "0001": "Log system activated."
+    }
+}

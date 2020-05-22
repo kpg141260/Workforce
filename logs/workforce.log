@@ -1,0 +1,582 @@
+2020-05-22 13:55:34 wfm DEBUG Log system activated.
+2020-05-22 13:55:34 wfm INFO File 'conf/workforce-enGB.json' successfully loaded.
+2020-05-22 13:55:34 wfm INFO File 'conf/workforce-framework.json' successfully loaded.
+2020-05-22 13:55:34 wfm INFO Path 'forecast' already exists.
+2020-05-22 13:55:34 wfm INFO File 'data/call_data.xlsx' exists.
+2020-05-22 13:55:34 wfm INFO File 'forecast/forecast.xlsx' exists.
+2020-05-22 13:55:34 wfm INFO File 'forecast/forecast-summary.json' exists.
+2020-05-22 13:55:34 wfm INFO ServiceInterval: 60
+2020-05-22 13:55:34 wfm INFO OperationHours: 24
+2020-05-22 13:55:34 wfm INFO SLA: 0.8
+2020-05-22 13:55:34 wfm INFO AnswerTime: 40
+2020-05-22 13:55:34 wfm INFO TalkTime: 240
+2020-05-22 13:55:34 wfm INFO ServiceTime: 30
+2020-05-22 13:55:34 wfm INFO AfterCallWork: 30
+2020-05-22 13:55:34 wfm INFO AbandonTime: 30
+2020-05-22 13:55:34 wfm INFO MaxWait: 50
+2020-05-22 13:55:34 wfm INFO NonVoice: 0
+2020-05-22 13:55:34 wfm INFO Concurrency: 1
+2020-05-22 13:55:34 wfm INFO ForecastDays: 10
+2020-05-22 13:55:34 wfm INFO Intervals: [15, 30, 45, 60]
+2020-05-22 13:55:34 wfm INFO WorkingDays: [0, 1, 2, 3, 4, 5, 6]
+2020-05-22 13:55:35 wfm INFO Excel workbook data/call_data.xlsx opened.
+2020-05-22 13:55:35 wfm WARNING Found 14 day columns in 'data/call_data.xlsx', but 10 'ForecastDays' are specified in 'conf/workforce-framework.json'! Using 10 days for forecast.
+2020-05-22 13:55:35 wfm DEBUG Using 10 days for forecast.
+2020-05-22 13:55:35 wfm DEBUG Number of Intervals in each day = 24.
+2020-05-22 13:55:35 wfm INFO Starting to build forecast dictionary.
+2020-05-22 13:55:35 wfm INFO Found 24 intervals in data source.
+2020-05-22 13:55:35 wfm INFO Found date '2020-06-01 in data source.
+2020-05-22 13:55:35 wfm INFO Found date '2020-06-02 in data source.
+2020-05-22 13:55:35 wfm INFO Found date '2020-06-03 in data source.
+2020-05-22 13:55:35 wfm INFO Found date '2020-06-04 in data source.
+2020-05-22 13:55:35 wfm INFO Found date '2020-06-05 in data source.
+2020-05-22 13:55:35 wfm INFO Found date '2020-06-06 in data source.
+2020-05-22 13:55:35 wfm INFO Found date '2020-06-07 in data source.
+2020-05-22 13:55:35 wfm INFO Found date '2020-06-08 in data source.
+2020-05-22 13:55:35 wfm INFO Found date '2020-06-09 in data source.
+2020-05-22 13:55:35 wfm INFO Found date '2020-06-10 in data source.
+2020-05-22 13:55:35 wfm INFO Forecast dictionary successfully built.
+2020-05-22 13:55:35 wfm INFO Generating forecast data.
+2020-05-22 13:55:35 wfm INFO Forecast successfully built.
+2020-05-22 13:55:35 wfm INFO Creating file 'forecast/forecast-summary.json'.
+2020-05-22 13:55:35 wfm INFO File 'forecast/forecast-summary.json' successfully saved.
+2020-05-22 13:55:35 wfm INFO Calculating KPIs for maximum transactions volume.
+2020-05-22 13:55:35 wfm INFO Largest transaction volume found on 2020/06/07 at 18:00 with 150 calls.
+2020-05-22 13:55:35 wfm INFO Using largest volume of 150 transactions for summary calculations.
+2020-05-22 13:55:35 wfm INFO Agents:         15
+2020-05-22 13:55:35 wfm INFO Utilisation:    75.00%
+2020-05-22 13:55:35 wfm INFO Trunks:         24
+2020-05-22 13:55:35 wfm INFO SLA:            85.63%
+2020-05-22 13:55:35 wfm INFO ASA:            16 sec
+2020-05-22 13:55:35 wfm INFO Abandoned:      14.37%
+2020-05-22 13:55:35 wfm INFO Queued:         21.80%
+2020-05-22 13:55:35 wfm INFO Queue Time      72 sec
+2020-05-22 13:55:35 wfm INFO Queue Size      1
+2020-05-22 13:55:35 wfm INFO File 'forecast/forecast.xlsx' successfully loaded.
+2020-05-22 13:55:35 wfm INFO Sheet named 'Summary' created.
+2020-05-22 13:55:35 wfm INFO Times column written.
+2020-05-22 13:55:35 wfm INFO Date row written.
+2020-05-22 13:55:35 wfm INFO Agent forecast completed.
+2020-05-22 13:55:35 wfm INFO Creating detailed report.
+2020-05-22 13:55:35 wfm INFO File 'forecast/forecast.xlsx' successfully saved.
+2020-05-22 13:55:35 wfm INFO Execution successfully completed. Have a nice day.
+2020-05-22 13:57:07 wfm DEBUG Log system activated.
+2020-05-22 13:57:07 wfm INFO File 'conf/workforce-enGB.json' successfully loaded.
+2020-05-22 13:57:07 wfm INFO File 'conf/workforce-framework.json' successfully loaded.
+2020-05-22 13:57:07 wfm INFO Path 'forecast' already exists.
+2020-05-22 13:57:07 wfm INFO File 'data/call_data.xlsx' exists.
+2020-05-22 13:57:07 wfm INFO File 'forecast/forecast.xlsx' exists.
+2020-05-22 13:57:07 wfm INFO File 'forecast/forecast-summary.json' exists.
+2020-05-22 13:57:07 wfm INFO ServiceInterval: 60
+2020-05-22 13:57:07 wfm INFO OperationHours: 24
+2020-05-22 13:57:07 wfm INFO SLA: 0.8
+2020-05-22 13:57:07 wfm INFO AnswerTime: 40
+2020-05-22 13:57:07 wfm INFO TalkTime: 240
+2020-05-22 13:57:07 wfm INFO ServiceTime: 30
+2020-05-22 13:57:07 wfm INFO AfterCallWork: 30
+2020-05-22 13:57:07 wfm INFO AbandonTime: 30
+2020-05-22 13:57:07 wfm INFO MaxWait: 50
+2020-05-22 13:57:07 wfm INFO NonVoice: 0
+2020-05-22 13:57:07 wfm INFO Concurrency: 1
+2020-05-22 13:57:07 wfm INFO ForecastDays: 10
+2020-05-22 13:57:07 wfm INFO Intervals: [15, 30, 45, 60]
+2020-05-22 13:57:07 wfm INFO WorkingDays: [0, 1, 2, 3, 4, 5, 6]
+2020-05-22 13:57:07 wfm INFO Excel workbook data/call_data.xlsx opened.
+2020-05-22 13:57:07 wfm WARNING Found 14 day columns in 'data/call_data.xlsx', but 10 'ForecastDays' are specified in 'conf/workforce-framework.json'! Using 10 days for forecast.
+2020-05-22 13:57:07 wfm DEBUG Using 10 days for forecast.
+2020-05-22 13:57:07 wfm DEBUG Number of Intervals in each day = 24.
+2020-05-22 13:57:07 wfm INFO Starting to build forecast dictionary.
+2020-05-22 13:57:07 wfm INFO Found 24 intervals in data source.
+2020-05-22 13:57:07 wfm INFO Found date '2020-06-01 in data source.
+2020-05-22 13:57:07 wfm INFO Found date '2020-06-02 in data source.
+2020-05-22 13:57:07 wfm INFO Found date '2020-06-03 in data source.
+2020-05-22 13:57:07 wfm INFO Found date '2020-06-04 in data source.
+2020-05-22 13:57:07 wfm INFO Found date '2020-06-05 in data source.
+2020-05-22 13:57:07 wfm INFO Found date '2020-06-06 in data source.
+2020-05-22 13:57:07 wfm INFO Found date '2020-06-07 in data source.
+2020-05-22 13:57:07 wfm INFO Found date '2020-06-08 in data source.
+2020-05-22 13:57:07 wfm INFO Found date '2020-06-09 in data source.
+2020-05-22 13:57:07 wfm INFO Found date '2020-06-10 in data source.
+2020-05-22 13:57:07 wfm INFO Forecast dictionary successfully built.
+2020-05-22 13:57:07 wfm INFO Generating forecast data.
+2020-05-22 13:57:07 wfm INFO Forecast successfully built.
+2020-05-22 13:57:07 wfm INFO Creating file 'forecast/forecast-summary.json'.
+2020-05-22 13:57:07 wfm INFO File 'forecast/forecast-summary.json' successfully saved.
+2020-05-22 13:57:07 wfm INFO Calculating KPIs for maximum transactions volume.
+2020-05-22 13:57:07 wfm INFO Largest transaction volume found on 2020/06/07 at 18:00 with 150 calls.
+2020-05-22 13:57:07 wfm INFO Using largest volume of 150 transactions for summary calculations.
+2020-05-22 13:57:07 wfm INFO Agents:         15
+2020-05-22 13:57:07 wfm INFO Utilisation:    75.00%
+2020-05-22 13:57:07 wfm INFO Trunks:         24
+2020-05-22 13:57:07 wfm INFO SLA:            85.63%
+2020-05-22 13:57:07 wfm INFO ASA:            16 sec
+2020-05-22 13:57:07 wfm INFO Abandoned:      14.37%
+2020-05-22 13:57:07 wfm INFO Queued:         21.80%
+2020-05-22 13:57:07 wfm INFO Queue Time      72 sec
+2020-05-22 13:57:07 wfm INFO Queue Size      1
+2020-05-22 13:57:07 wfm INFO File 'forecast/forecast.xlsx' successfully loaded.
+2020-05-22 13:57:07 wfm INFO Sheet named 'Summary' created.
+2020-05-22 13:57:07 wfm INFO Times column written.
+2020-05-22 13:57:07 wfm INFO Date row written.
+2020-05-22 13:57:07 wfm INFO Agent forecast completed.
+2020-05-22 13:57:07 wfm INFO Creating detailed report.
+2020-05-22 13:57:07 wfm INFO File 'forecast/forecast.xlsx' successfully saved.
+2020-05-22 13:57:07 wfm INFO Execution successfully completed. Have a nice day.
+2020-05-22 17:17:47 wfm DEBUG Log system activated.
+2020-05-22 17:17:47 wfm INFO File 'conf/workforce-enGB.json' successfully loaded.
+2020-05-22 17:17:47 wfm INFO File 'conf/workforce-framework.json' successfully loaded.
+2020-05-22 17:17:47 wfm INFO Path 'forecast' already exists.
+2020-05-22 17:17:47 wfm INFO File 'data/call_data.xlsx' exists.
+2020-05-22 17:17:47 wfm INFO File 'forecast/forecast.xlsx' exists.
+2020-05-22 17:17:47 wfm INFO File 'forecast/forecast-summary.json' exists.
+2020-05-22 17:17:47 wfm INFO ServiceInterval: 60
+2020-05-22 17:17:47 wfm INFO OperationHours: 24
+2020-05-22 17:17:47 wfm INFO SLA: 0.8
+2020-05-22 17:17:47 wfm INFO AnswerTime: 40
+2020-05-22 17:17:47 wfm INFO TalkTime: 240
+2020-05-22 17:17:47 wfm INFO ServiceTime: 30
+2020-05-22 17:17:47 wfm INFO AfterCallWork: 30
+2020-05-22 17:17:47 wfm INFO AbandonTime: 30
+2020-05-22 17:17:47 wfm INFO MaxWait: 50
+2020-05-22 17:17:47 wfm INFO NonVoice: 0
+2020-05-22 17:17:47 wfm INFO Concurrency: 1
+2020-05-22 17:17:47 wfm INFO ForecastDays: 10
+2020-05-22 17:17:47 wfm INFO Intervals: [15, 30, 45, 60]
+2020-05-22 17:17:47 wfm INFO WorkingDays: [0, 1, 2, 3, 4, 5, 6]
+2020-05-22 17:17:48 wfm INFO Excel workbook data/call_data.xlsx opened.
+2020-05-22 17:17:48 wfm WARNING Found 14 day columns in 'data/call_data.xlsx', but 10 'ForecastDays' are specified in 'conf/workforce-framework.json'! Using 10 days for forecast.
+2020-05-22 17:17:48 wfm DEBUG Using 10 days for forecast.
+2020-05-22 17:17:48 wfm DEBUG Number of Intervals in each day = 24.
+2020-05-22 17:17:48 wfm INFO Starting to build forecast dictionary.
+2020-05-22 17:17:48 wfm INFO Found 24 intervals in data source.
+2020-05-22 17:17:48 wfm INFO Found date '2020-06-01 in data source.
+2020-05-22 17:17:48 wfm INFO Found date '2020-06-02 in data source.
+2020-05-22 17:17:48 wfm INFO Found date '2020-06-03 in data source.
+2020-05-22 17:17:48 wfm INFO Found date '2020-06-04 in data source.
+2020-05-22 17:17:48 wfm INFO Found date '2020-06-05 in data source.
+2020-05-22 17:17:48 wfm INFO Found date '2020-06-06 in data source.
+2020-05-22 17:17:48 wfm INFO Found date '2020-06-07 in data source.
+2020-05-22 17:17:48 wfm INFO Found date '2020-06-08 in data source.
+2020-05-22 17:17:48 wfm INFO Found date '2020-06-09 in data source.
+2020-05-22 17:17:48 wfm INFO Found date '2020-06-10 in data source.
+2020-05-22 17:17:48 wfm INFO Forecast dictionary successfully built.
+2020-05-22 17:17:48 wfm INFO Generating forecast data.
+2020-05-22 17:17:48 wfm INFO Forecast successfully built.
+2020-05-22 17:17:48 wfm INFO Creating file 'forecast/forecast-summary.json'.
+2020-05-22 17:17:48 wfm INFO File 'forecast/forecast-summary.json' successfully saved.
+2020-05-22 17:17:48 wfm INFO Calculating KPIs for maximum transactions volume.
+2020-05-22 17:17:48 wfm INFO Largest transaction volume found on 2020/06/07 at 18:00 with 150 calls.
+2020-05-22 17:17:48 wfm INFO Using largest volume of 150 transactions for summary calculations.
+2020-05-22 17:17:48 wfm INFO Agents:         15
+2020-05-22 17:17:48 wfm INFO Utilisation:    75.00%
+2020-05-22 17:17:48 wfm INFO Trunks:         24
+2020-05-22 17:17:48 wfm INFO SLA:            85.63%
+2020-05-22 17:17:48 wfm INFO ASA:            16 sec
+2020-05-22 17:17:48 wfm INFO Abandoned:      14.37%
+2020-05-22 17:17:48 wfm INFO Queued:         21.80%
+2020-05-22 17:17:48 wfm INFO Queue Time      72 sec
+2020-05-22 17:17:48 wfm INFO Queue Size      1
+2020-05-22 17:17:48 wfm INFO File 'forecast/forecast.xlsx' successfully loaded.
+2020-05-22 17:17:48 wfm INFO Sheet named 'Summary' created.
+2020-05-22 17:17:48 wfm INFO Times column written.
+2020-05-22 17:17:48 wfm INFO Date row written.
+2020-05-22 17:17:48 wfm INFO Agent forecast completed.
+2020-05-22 17:17:48 wfm INFO Creating detailed report.
+2020-05-22 17:20:21 wfm DEBUG Log system activated.
+2020-05-22 17:20:21 wfm INFO File 'conf/workforce-enGB.json' successfully loaded.
+2020-05-22 17:20:21 wfm INFO File 'conf/workforce-framework.json' successfully loaded.
+2020-05-22 17:20:21 wfm INFO Path 'forecast' already exists.
+2020-05-22 17:20:21 wfm INFO File 'data/call_data.xlsx' exists.
+2020-05-22 17:20:21 wfm INFO File 'forecast/forecast.xlsx' exists.
+2020-05-22 17:20:21 wfm INFO File 'forecast/forecast-summary.json' exists.
+2020-05-22 17:20:21 wfm INFO ServiceInterval: 60
+2020-05-22 17:20:21 wfm INFO OperationHours: 24
+2020-05-22 17:20:21 wfm INFO SLA: 0.8
+2020-05-22 17:20:21 wfm INFO AnswerTime: 40
+2020-05-22 17:20:21 wfm INFO TalkTime: 240
+2020-05-22 17:20:21 wfm INFO ServiceTime: 30
+2020-05-22 17:20:21 wfm INFO AfterCallWork: 30
+2020-05-22 17:20:21 wfm INFO AbandonTime: 30
+2020-05-22 17:20:21 wfm INFO MaxWait: 50
+2020-05-22 17:20:21 wfm INFO NonVoice: 0
+2020-05-22 17:20:21 wfm INFO Concurrency: 1
+2020-05-22 17:20:21 wfm INFO ForecastDays: 10
+2020-05-22 17:20:21 wfm INFO Intervals: [15, 30, 45, 60]
+2020-05-22 17:20:21 wfm INFO WorkingDays: [0, 1, 2, 3, 4, 5, 6]
+2020-05-22 17:20:21 wfm INFO Excel workbook data/call_data.xlsx opened.
+2020-05-22 17:20:21 wfm WARNING Found 14 day columns in 'data/call_data.xlsx', but 10 'ForecastDays' are specified in 'conf/workforce-framework.json'! Using 10 days for forecast.
+2020-05-22 17:20:21 wfm DEBUG Using 10 days for forecast.
+2020-05-22 17:20:21 wfm DEBUG Number of Intervals in each day = 24.
+2020-05-22 17:20:21 wfm INFO Starting to build forecast dictionary.
+2020-05-22 17:20:21 wfm INFO Found 24 intervals in data source.
+2020-05-22 17:20:21 wfm INFO Found date '2020-06-01 in data source.
+2020-05-22 17:20:21 wfm INFO Found date '2020-06-02 in data source.
+2020-05-22 17:20:21 wfm INFO Found date '2020-06-03 in data source.
+2020-05-22 17:20:21 wfm INFO Found date '2020-06-04 in data source.
+2020-05-22 17:20:21 wfm INFO Found date '2020-06-05 in data source.
+2020-05-22 17:20:21 wfm INFO Found date '2020-06-06 in data source.
+2020-05-22 17:20:21 wfm INFO Found date '2020-06-07 in data source.
+2020-05-22 17:20:21 wfm INFO Found date '2020-06-08 in data source.
+2020-05-22 17:20:21 wfm INFO Found date '2020-06-09 in data source.
+2020-05-22 17:20:21 wfm INFO Found date '2020-06-10 in data source.
+2020-05-22 17:20:21 wfm INFO Forecast dictionary successfully built.
+2020-05-22 17:20:21 wfm INFO Generating forecast data.
+2020-05-22 17:20:21 wfm INFO Forecast successfully built.
+2020-05-22 17:20:21 wfm INFO Creating file 'forecast/forecast-summary.json'.
+2020-05-22 17:20:21 wfm INFO File 'forecast/forecast-summary.json' successfully saved.
+2020-05-22 17:20:21 wfm INFO Calculating KPIs for maximum transactions volume.
+2020-05-22 17:20:21 wfm INFO Largest transaction volume found on 2020/06/07 at 18:00 with 150 calls.
+2020-05-22 17:20:21 wfm INFO Using largest volume of 150 transactions for summary calculations.
+2020-05-22 17:20:21 wfm INFO Agents:         15
+2020-05-22 17:20:21 wfm INFO Utilisation:    75.00%
+2020-05-22 17:20:21 wfm INFO Trunks:         24
+2020-05-22 17:20:21 wfm INFO SLA:            85.63%
+2020-05-22 17:20:21 wfm INFO ASA:            16 sec
+2020-05-22 17:20:21 wfm INFO Abandoned:      14.37%
+2020-05-22 17:20:21 wfm INFO Queued:         21.80%
+2020-05-22 17:20:21 wfm INFO Queue Time      72 sec
+2020-05-22 17:20:21 wfm INFO Queue Size      1
+2020-05-22 17:20:21 wfm INFO File 'forecast/forecast.xlsx' successfully loaded.
+2020-05-22 17:20:21 wfm INFO Sheet named 'Summary' created.
+2020-05-22 17:20:21 wfm INFO Times column written.
+2020-05-22 17:20:21 wfm INFO Date row written.
+2020-05-22 17:20:21 wfm INFO Agent forecast completed.
+2020-05-22 17:20:21 wfm INFO Creating detailed report.
+2020-05-22 17:24:05 wfm DEBUG Log system activated.
+2020-05-22 17:24:05 wfm INFO File 'conf/workforce-enGB.json' successfully loaded.
+2020-05-22 17:24:05 wfm INFO File 'conf/workforce-framework.json' successfully loaded.
+2020-05-22 17:24:05 wfm INFO Path 'forecast' already exists.
+2020-05-22 17:24:05 wfm INFO File 'data/call_data.xlsx' exists.
+2020-05-22 17:24:05 wfm INFO File 'forecast/forecast.xlsx' exists.
+2020-05-22 17:24:05 wfm INFO File 'forecast/forecast-summary.json' exists.
+2020-05-22 17:24:05 wfm INFO ServiceInterval: 60
+2020-05-22 17:24:05 wfm INFO OperationHours: 24
+2020-05-22 17:24:05 wfm INFO SLA: 0.8
+2020-05-22 17:24:05 wfm INFO AnswerTime: 40
+2020-05-22 17:24:05 wfm INFO TalkTime: 240
+2020-05-22 17:24:05 wfm INFO ServiceTime: 30
+2020-05-22 17:24:05 wfm INFO AfterCallWork: 30
+2020-05-22 17:24:05 wfm INFO AbandonTime: 30
+2020-05-22 17:24:05 wfm INFO MaxWait: 50
+2020-05-22 17:24:05 wfm INFO NonVoice: 0
+2020-05-22 17:24:05 wfm INFO Concurrency: 1
+2020-05-22 17:24:05 wfm INFO ForecastDays: 10
+2020-05-22 17:24:05 wfm INFO Intervals: [15, 30, 45, 60]
+2020-05-22 17:24:05 wfm INFO WorkingDays: [0, 1, 2, 3, 4, 5, 6]
+2020-05-22 17:24:05 wfm INFO Excel workbook data/call_data.xlsx opened.
+2020-05-22 17:24:05 wfm WARNING Found 14 day columns in 'data/call_data.xlsx', but 10 'ForecastDays' are specified in 'conf/workforce-framework.json'! Using 10 days for forecast.
+2020-05-22 17:24:05 wfm DEBUG Using 10 days for forecast.
+2020-05-22 17:24:05 wfm DEBUG Number of Intervals in each day = 24.
+2020-05-22 17:24:05 wfm INFO Starting to build forecast dictionary.
+2020-05-22 17:24:05 wfm INFO Found 24 intervals in data source.
+2020-05-22 17:24:05 wfm INFO Found date '2020-06-01 in data source.
+2020-05-22 17:24:05 wfm INFO Found date '2020-06-02 in data source.
+2020-05-22 17:24:05 wfm INFO Found date '2020-06-03 in data source.
+2020-05-22 17:24:05 wfm INFO Found date '2020-06-04 in data source.
+2020-05-22 17:24:05 wfm INFO Found date '2020-06-05 in data source.
+2020-05-22 17:24:05 wfm INFO Found date '2020-06-06 in data source.
+2020-05-22 17:24:05 wfm INFO Found date '2020-06-07 in data source.
+2020-05-22 17:24:05 wfm INFO Found date '2020-06-08 in data source.
+2020-05-22 17:24:05 wfm INFO Found date '2020-06-09 in data source.
+2020-05-22 17:24:05 wfm INFO Found date '2020-06-10 in data source.
+2020-05-22 17:24:05 wfm INFO Forecast dictionary successfully built.
+2020-05-22 17:24:05 wfm INFO Generating forecast data.
+2020-05-22 17:24:05 wfm INFO Forecast successfully built.
+2020-05-22 17:24:05 wfm INFO Creating file 'forecast/forecast-summary.json'.
+2020-05-22 17:24:05 wfm INFO File 'forecast/forecast-summary.json' successfully saved.
+2020-05-22 17:24:05 wfm INFO Calculating KPIs for maximum transactions volume.
+2020-05-22 17:24:05 wfm INFO Largest transaction volume found on 2020/06/07 at 18:00 with 150 calls.
+2020-05-22 17:24:05 wfm INFO Using largest volume of 150 transactions for summary calculations.
+2020-05-22 17:24:05 wfm INFO Agents:         15
+2020-05-22 17:24:05 wfm INFO Utilisation:    75.00%
+2020-05-22 17:24:05 wfm INFO Trunks:         24
+2020-05-22 17:24:05 wfm INFO SLA:            85.63%
+2020-05-22 17:24:05 wfm INFO ASA:            16 sec
+2020-05-22 17:24:05 wfm INFO Abandoned:      14.37%
+2020-05-22 17:24:05 wfm INFO Queued:         21.80%
+2020-05-22 17:24:05 wfm INFO Queue Time      72 sec
+2020-05-22 17:24:05 wfm INFO Queue Size      1
+2020-05-22 17:24:05 wfm INFO File 'forecast/forecast.xlsx' successfully loaded.
+2020-05-22 17:24:05 wfm INFO Sheet named 'Summary' created.
+2020-05-22 17:24:05 wfm INFO Times column written.
+2020-05-22 17:24:05 wfm INFO Date row written.
+2020-05-22 17:24:05 wfm INFO Agent forecast completed.
+2020-05-22 17:24:05 wfm INFO Creating detailed report.
+2020-05-22 17:24:18 wfm INFO File 'forecast/forecast.xlsx' successfully saved.
+2020-05-22 17:24:18 wfm INFO Execution successfully completed. Have a nice day.
+2020-05-22 17:32:42 wfm DEBUG Log system activated.
+2020-05-22 17:32:42 wfm INFO File 'conf/workforce-enGB.json' successfully loaded.
+2020-05-22 17:32:42 wfm INFO File 'conf/workforce-framework.json' successfully loaded.
+2020-05-22 17:32:42 wfm INFO Path 'forecast' already exists.
+2020-05-22 17:32:42 wfm INFO File 'data/call_data.xlsx' exists.
+2020-05-22 17:32:42 wfm INFO File 'forecast/forecast.xlsx' exists.
+2020-05-22 17:32:42 wfm INFO File 'forecast/forecast-summary.json' exists.
+2020-05-22 17:32:42 wfm INFO ServiceInterval: 60
+2020-05-22 17:32:42 wfm INFO OperationHours: 24
+2020-05-22 17:32:42 wfm INFO SLA: 0.8
+2020-05-22 17:32:42 wfm INFO AnswerTime: 40
+2020-05-22 17:32:42 wfm INFO TalkTime: 240
+2020-05-22 17:32:42 wfm INFO ServiceTime: 30
+2020-05-22 17:32:42 wfm INFO AfterCallWork: 30
+2020-05-22 17:32:42 wfm INFO AbandonTime: 30
+2020-05-22 17:32:42 wfm INFO MaxWait: 50
+2020-05-22 17:32:42 wfm INFO NonVoice: 0
+2020-05-22 17:32:42 wfm INFO Availability: 0.85
+2020-05-22 17:32:42 wfm INFO Concurrency: 1
+2020-05-22 17:32:42 wfm INFO ForecastDays: 10
+2020-05-22 17:32:42 wfm INFO Intervals: [15, 30, 45, 60]
+2020-05-22 17:32:42 wfm INFO WorkingDays: [0, 1, 2, 3, 4, 5, 6]
+2020-05-22 17:32:42 wfm INFO Excel workbook data/call_data.xlsx opened.
+2020-05-22 17:32:42 wfm WARNING Found 14 day columns in 'data/call_data.xlsx', but 10 'ForecastDays' are specified in 'conf/workforce-framework.json'! Using 10 days for forecast.
+2020-05-22 17:32:42 wfm DEBUG Using 10 days for forecast.
+2020-05-22 17:32:42 wfm DEBUG Number of Intervals in each day = 24.
+2020-05-22 17:32:42 wfm INFO Starting to build forecast dictionary.
+2020-05-22 17:32:42 wfm INFO Found 24 intervals in data source.
+2020-05-22 17:32:42 wfm INFO Found date '2020-06-01 in data source.
+2020-05-22 17:32:42 wfm INFO Found date '2020-06-02 in data source.
+2020-05-22 17:32:42 wfm INFO Found date '2020-06-03 in data source.
+2020-05-22 17:32:42 wfm INFO Found date '2020-06-04 in data source.
+2020-05-22 17:32:42 wfm INFO Found date '2020-06-05 in data source.
+2020-05-22 17:32:42 wfm INFO Found date '2020-06-06 in data source.
+2020-05-22 17:32:42 wfm INFO Found date '2020-06-07 in data source.
+2020-05-22 17:32:42 wfm INFO Found date '2020-06-08 in data source.
+2020-05-22 17:32:42 wfm INFO Found date '2020-06-09 in data source.
+2020-05-22 17:32:42 wfm INFO Found date '2020-06-10 in data source.
+2020-05-22 17:32:42 wfm INFO Forecast dictionary successfully built.
+2020-05-22 17:32:42 wfm INFO Generating forecast data.
+2020-05-22 17:32:42 wfm INFO Forecast successfully built.
+2020-05-22 17:32:42 wfm INFO Creating file 'forecast/forecast-summary.json'.
+2020-05-22 17:32:42 wfm INFO File 'forecast/forecast-summary.json' successfully saved.
+2020-05-22 17:32:42 wfm INFO Calculating KPIs for maximum transactions volume.
+2020-05-22 17:32:42 wfm INFO Largest transaction volume found on 2020/06/07 at 18:00 with 150 calls.
+2020-05-22 17:32:42 wfm INFO Using largest volume of 150 transactions for summary calculations.
+2020-05-22 17:32:42 wfm INFO Agents:         15
+2020-05-22 17:32:42 wfm INFO Utilisation:    75.00%
+2020-05-22 17:32:42 wfm INFO Trunks:         24
+2020-05-22 17:32:42 wfm INFO SLA:            85.63%
+2020-05-22 17:32:42 wfm INFO ASA:            16 sec
+2020-05-22 17:32:42 wfm INFO Abandoned:      14.37%
+2020-05-22 17:32:42 wfm INFO Queued:         21.80%
+2020-05-22 17:32:42 wfm INFO Queue Time      72 sec
+2020-05-22 17:32:42 wfm INFO Queue Size      1
+2020-05-22 17:32:42 wfm INFO File 'forecast/forecast.xlsx' successfully loaded.
+2020-05-22 17:32:42 wfm INFO Sheet named 'Summary' created.
+2020-05-22 17:32:42 wfm INFO Times column written.
+2020-05-22 17:32:42 wfm INFO Date row written.
+2020-05-22 17:32:42 wfm INFO Agent forecast completed.
+2020-05-22 17:32:42 wfm INFO Creating detailed report.
+2020-05-22 17:32:43 wfm INFO File 'forecast/forecast.xlsx' successfully saved.
+2020-05-22 17:32:43 wfm INFO Execution successfully completed. Have a nice day.
+2020-05-22 17:34:10 wfm DEBUG Log system activated.
+2020-05-22 17:34:10 wfm INFO File 'conf/workforce-enGB.json' successfully loaded.
+2020-05-22 17:34:10 wfm INFO File 'conf/workforce-framework.json' successfully loaded.
+2020-05-22 17:34:10 wfm INFO Path 'forecast' already exists.
+2020-05-22 17:34:10 wfm INFO File 'data/call_data.xlsx' exists.
+2020-05-22 17:34:10 wfm INFO File 'forecast/forecast.xlsx' created.
+2020-05-22 17:34:10 wfm INFO File 'forecast/forecast-summary.json' exists.
+2020-05-22 17:34:10 wfm INFO ServiceInterval: 60
+2020-05-22 17:34:10 wfm INFO OperationHours: 24
+2020-05-22 17:34:10 wfm INFO SLA: 0.8
+2020-05-22 17:34:10 wfm INFO AnswerTime: 40
+2020-05-22 17:34:10 wfm INFO TalkTime: 240
+2020-05-22 17:34:10 wfm INFO ServiceTime: 30
+2020-05-22 17:34:10 wfm INFO AfterCallWork: 30
+2020-05-22 17:34:10 wfm INFO AbandonTime: 30
+2020-05-22 17:34:10 wfm INFO MaxWait: 50
+2020-05-22 17:34:10 wfm INFO NonVoice: 0
+2020-05-22 17:34:10 wfm INFO Availability: 0.85
+2020-05-22 17:34:10 wfm INFO Concurrency: 1
+2020-05-22 17:34:10 wfm INFO ForecastDays: 10
+2020-05-22 17:34:10 wfm INFO Intervals: [15, 30, 45, 60]
+2020-05-22 17:34:10 wfm INFO WorkingDays: [0, 1, 2, 3, 4, 5, 6]
+2020-05-22 17:34:10 wfm INFO Excel workbook data/call_data.xlsx opened.
+2020-05-22 17:34:10 wfm WARNING Found 14 day columns in 'data/call_data.xlsx', but 10 'ForecastDays' are specified in 'conf/workforce-framework.json'! Using 10 days for forecast.
+2020-05-22 17:34:10 wfm DEBUG Using 10 days for forecast.
+2020-05-22 17:34:10 wfm DEBUG Number of Intervals in each day = 24.
+2020-05-22 17:34:10 wfm INFO Starting to build forecast dictionary.
+2020-05-22 17:34:10 wfm INFO Found 24 intervals in data source.
+2020-05-22 17:34:10 wfm INFO Found date '2020-06-01 in data source.
+2020-05-22 17:34:10 wfm INFO Found date '2020-06-02 in data source.
+2020-05-22 17:34:10 wfm INFO Found date '2020-06-03 in data source.
+2020-05-22 17:34:10 wfm INFO Found date '2020-06-04 in data source.
+2020-05-22 17:34:10 wfm INFO Found date '2020-06-05 in data source.
+2020-05-22 17:34:10 wfm INFO Found date '2020-06-06 in data source.
+2020-05-22 17:34:10 wfm INFO Found date '2020-06-07 in data source.
+2020-05-22 17:34:10 wfm INFO Found date '2020-06-08 in data source.
+2020-05-22 17:34:10 wfm INFO Found date '2020-06-09 in data source.
+2020-05-22 17:34:10 wfm INFO Found date '2020-06-10 in data source.
+2020-05-22 17:34:10 wfm INFO Forecast dictionary successfully built.
+2020-05-22 17:34:10 wfm INFO Generating forecast data.
+2020-05-22 17:34:10 wfm INFO Forecast successfully built.
+2020-05-22 17:34:10 wfm INFO Creating file 'forecast/forecast-summary.json'.
+2020-05-22 17:34:10 wfm INFO File 'forecast/forecast-summary.json' successfully saved.
+2020-05-22 17:34:10 wfm INFO Calculating KPIs for maximum transactions volume.
+2020-05-22 17:34:10 wfm INFO Largest transaction volume found on 2020/06/07 at 18:00 with 150 calls.
+2020-05-22 17:34:10 wfm INFO Using largest volume of 150 transactions for summary calculations.
+2020-05-22 17:34:10 wfm INFO Agents:         15
+2020-05-22 17:34:10 wfm INFO Utilisation:    75.00%
+2020-05-22 17:34:10 wfm INFO Trunks:         24
+2020-05-22 17:34:10 wfm INFO SLA:            85.63%
+2020-05-22 17:34:10 wfm INFO ASA:            16 sec
+2020-05-22 17:34:10 wfm INFO Abandoned:      14.37%
+2020-05-22 17:34:10 wfm INFO Queued:         21.80%
+2020-05-22 17:34:10 wfm INFO Queue Time      72 sec
+2020-05-22 17:34:10 wfm INFO Queue Size      1
+2020-05-22 17:34:10 wfm INFO File 'forecast/forecast.xlsx' successfully loaded.
+2020-05-22 17:34:10 wfm INFO Sheet named 'Summary' created.
+2020-05-22 17:34:10 wfm INFO Times column written.
+2020-05-22 17:34:10 wfm INFO Date row written.
+2020-05-22 17:34:10 wfm INFO Agent forecast completed.
+2020-05-22 17:34:10 wfm INFO Creating detailed report.
+2020-05-22 17:34:11 wfm INFO File 'forecast/forecast.xlsx' successfully saved.
+2020-05-22 17:34:11 wfm INFO Execution successfully completed. Have a nice day.
+2020-05-22 17:35:32 wfm DEBUG Log system activated.
+2020-05-22 17:35:32 wfm INFO File 'conf/workforce-enGB.json' successfully loaded.
+2020-05-22 17:35:32 wfm INFO File 'conf/workforce-framework.json' successfully loaded.
+2020-05-22 17:35:32 wfm INFO Path 'forecast' already exists.
+2020-05-22 17:35:32 wfm INFO File 'data/call_data.xlsx' exists.
+2020-05-22 17:35:32 wfm INFO File 'forecast/forecast.xlsx' exists.
+2020-05-22 17:35:32 wfm INFO File 'forecast/forecast-summary.json' exists.
+2020-05-22 17:35:32 wfm INFO ServiceInterval: 60
+2020-05-22 17:35:32 wfm INFO OperationHours: 24
+2020-05-22 17:35:32 wfm INFO SLA: 0.8
+2020-05-22 17:35:32 wfm INFO AnswerTime: 40
+2020-05-22 17:35:32 wfm INFO TalkTime: 240
+2020-05-22 17:35:32 wfm INFO ServiceTime: 30
+2020-05-22 17:35:32 wfm INFO AfterCallWork: 30
+2020-05-22 17:35:32 wfm INFO AbandonTime: 30
+2020-05-22 17:35:32 wfm INFO MaxWait: 50
+2020-05-22 17:35:32 wfm INFO NonVoice: 0
+2020-05-22 17:35:32 wfm INFO Availability: 0.85
+2020-05-22 17:35:32 wfm INFO Concurrency: 1
+2020-05-22 17:35:32 wfm INFO ForecastDays: 10
+2020-05-22 17:35:32 wfm INFO Intervals: [15, 30, 45, 60]
+2020-05-22 17:35:32 wfm INFO WorkingDays: [0, 1, 2, 3, 4, 5, 6]
+2020-05-22 17:35:32 wfm INFO Excel workbook data/call_data.xlsx opened.
+2020-05-22 17:35:32 wfm WARNING Found 14 day columns in 'data/call_data.xlsx', but 10 'ForecastDays' are specified in 'conf/workforce-framework.json'! Using 10 days for forecast.
+2020-05-22 17:35:32 wfm DEBUG Using 10 days for forecast.
+2020-05-22 17:35:32 wfm DEBUG Number of Intervals in each day = 24.
+2020-05-22 17:35:32 wfm INFO Starting to build forecast dictionary.
+2020-05-22 17:35:32 wfm INFO Found 24 intervals in data source.
+2020-05-22 17:35:32 wfm INFO Found date '2020-06-01 in data source.
+2020-05-22 17:35:32 wfm INFO Found date '2020-06-02 in data source.
+2020-05-22 17:35:32 wfm INFO Found date '2020-06-03 in data source.
+2020-05-22 17:35:32 wfm INFO Found date '2020-06-04 in data source.
+2020-05-22 17:35:32 wfm INFO Found date '2020-06-05 in data source.
+2020-05-22 17:35:32 wfm INFO Found date '2020-06-06 in data source.
+2020-05-22 17:35:32 wfm INFO Found date '2020-06-07 in data source.
+2020-05-22 17:35:32 wfm INFO Found date '2020-06-08 in data source.
+2020-05-22 17:35:32 wfm INFO Found date '2020-06-09 in data source.
+2020-05-22 17:35:32 wfm INFO Found date '2020-06-10 in data source.
+2020-05-22 17:35:32 wfm INFO Forecast dictionary successfully built.
+2020-05-22 17:35:32 wfm INFO Generating forecast data.
+2020-05-22 17:38:09 wfm DEBUG Log system activated.
+2020-05-22 17:38:09 wfm INFO File 'conf/workforce-enGB.json' successfully loaded.
+2020-05-22 17:38:09 wfm INFO File 'conf/workforce-framework.json' successfully loaded.
+2020-05-22 17:38:09 wfm INFO Path 'forecast' already exists.
+2020-05-22 17:38:09 wfm INFO File 'data/call_data.xlsx' exists.
+2020-05-22 17:38:09 wfm INFO File 'forecast/forecast.xlsx' exists.
+2020-05-22 17:38:09 wfm INFO File 'forecast/forecast-summary.json' exists.
+2020-05-22 17:38:09 wfm INFO ServiceInterval: 60
+2020-05-22 17:38:09 wfm INFO OperationHours: 24
+2020-05-22 17:38:09 wfm INFO SLA: 0.8
+2020-05-22 17:38:09 wfm INFO AnswerTime: 40
+2020-05-22 17:38:09 wfm INFO TalkTime: 240
+2020-05-22 17:38:09 wfm INFO ServiceTime: 30
+2020-05-22 17:38:09 wfm INFO AfterCallWork: 30
+2020-05-22 17:38:09 wfm INFO AbandonTime: 30
+2020-05-22 17:38:09 wfm INFO MaxWait: 50
+2020-05-22 17:38:09 wfm INFO NonVoice: 0
+2020-05-22 17:38:09 wfm INFO Availability: 0.85
+2020-05-22 17:38:09 wfm INFO Concurrency: 1
+2020-05-22 17:38:09 wfm INFO ForecastDays: 10
+2020-05-22 17:38:09 wfm INFO Intervals: [15, 30, 45, 60]
+2020-05-22 17:38:09 wfm INFO WorkingDays: [0, 1, 2, 3, 4, 5, 6]
+2020-05-22 17:38:09 wfm INFO Excel workbook data/call_data.xlsx opened.
+2020-05-22 17:38:09 wfm WARNING Found 14 day columns in 'data/call_data.xlsx', but 10 'ForecastDays' are specified in 'conf/workforce-framework.json'! Using 10 days for forecast.
+2020-05-22 17:38:09 wfm DEBUG Using 10 days for forecast.
+2020-05-22 17:38:09 wfm DEBUG Number of Intervals in each day = 24.
+2020-05-22 17:38:09 wfm INFO Starting to build forecast dictionary.
+2020-05-22 17:38:09 wfm INFO Found 24 intervals in data source.
+2020-05-22 17:38:09 wfm INFO Found date '2020-06-01 in data source.
+2020-05-22 17:38:09 wfm INFO Found date '2020-06-02 in data source.
+2020-05-22 17:38:09 wfm INFO Found date '2020-06-03 in data source.
+2020-05-22 17:38:09 wfm INFO Found date '2020-06-04 in data source.
+2020-05-22 17:38:09 wfm INFO Found date '2020-06-05 in data source.
+2020-05-22 17:38:09 wfm INFO Found date '2020-06-06 in data source.
+2020-05-22 17:38:09 wfm INFO Found date '2020-06-07 in data source.
+2020-05-22 17:38:09 wfm INFO Found date '2020-06-08 in data source.
+2020-05-22 17:38:09 wfm INFO Found date '2020-06-09 in data source.
+2020-05-22 17:38:09 wfm INFO Found date '2020-06-10 in data source.
+2020-05-22 17:38:09 wfm INFO Forecast dictionary successfully built.
+2020-05-22 17:38:09 wfm INFO Generating forecast data.
+2020-05-22 17:38:09 root CRITICAL 'Erlang' object has no attribute 'avail'
+Traceback (most recent call last):
+  File "/Users/Peter/OneDrive/Development/Python/Workforce/workforce.py", line 187, in <module>
+    ec = Erlang(dic_cnf['fw']['SLA'], dic_cnf['fw']['AnswerTime'], dic_cnf['fw']['TalkTime'], dic_cnf['fw']['AfterCallWork'], dic_cnf['fw']['AbandonTime'], dic_cnf['fw']['MaxWait'], dic_cnf['fw']['NonVoice'], dic_cnf['fw']['Concurrency'], dic_cnf['fw']['ServiceInterval'], dic_cnf['fw']['OperationHours'], avail=0.75)
+  File "/Users/Peter/OneDrive/Development/Python/Workforce/lib/erlang/erlang_c.py", line 48, in __init__
+    self.aht = aiw + ait  / self.avail # reflect agent availability
+AttributeError: 'Erlang' object has no attribute 'avail'
+2020-05-22 17:39:38 wfm DEBUG Log system activated.
+2020-05-22 17:39:38 wfm INFO File 'conf/workforce-enGB.json' successfully loaded.
+2020-05-22 17:39:38 wfm INFO File 'conf/workforce-framework.json' successfully loaded.
+2020-05-22 17:39:38 wfm INFO Path 'forecast' already exists.
+2020-05-22 17:39:38 wfm INFO File 'data/call_data.xlsx' exists.
+2020-05-22 17:39:38 wfm INFO File 'forecast/forecast.xlsx' exists.
+2020-05-22 17:39:38 wfm INFO File 'forecast/forecast-summary.json' exists.
+2020-05-22 17:39:38 wfm INFO ServiceInterval: 60
+2020-05-22 17:39:38 wfm INFO OperationHours: 24
+2020-05-22 17:39:38 wfm INFO SLA: 0.8
+2020-05-22 17:39:38 wfm INFO AnswerTime: 40
+2020-05-22 17:39:38 wfm INFO TalkTime: 240
+2020-05-22 17:39:38 wfm INFO ServiceTime: 30
+2020-05-22 17:39:38 wfm INFO AfterCallWork: 30
+2020-05-22 17:39:38 wfm INFO AbandonTime: 30
+2020-05-22 17:39:38 wfm INFO MaxWait: 50
+2020-05-22 17:39:38 wfm INFO NonVoice: 0
+2020-05-22 17:39:38 wfm INFO Availability: 0.85
+2020-05-22 17:39:38 wfm INFO Concurrency: 1
+2020-05-22 17:39:38 wfm INFO ForecastDays: 10
+2020-05-22 17:39:38 wfm INFO Intervals: [15, 30, 45, 60]
+2020-05-22 17:39:38 wfm INFO WorkingDays: [0, 1, 2, 3, 4, 5, 6]
+2020-05-22 17:39:38 wfm INFO Excel workbook data/call_data.xlsx opened.
+2020-05-22 17:39:38 wfm WARNING Found 14 day columns in 'data/call_data.xlsx', but 10 'ForecastDays' are specified in 'conf/workforce-framework.json'! Using 10 days for forecast.
+2020-05-22 17:39:38 wfm DEBUG Using 10 days for forecast.
+2020-05-22 17:39:38 wfm DEBUG Number of Intervals in each day = 24.
+2020-05-22 17:39:38 wfm INFO Starting to build forecast dictionary.
+2020-05-22 17:39:38 wfm INFO Found 24 intervals in data source.
+2020-05-22 17:39:38 wfm INFO Found date '2020-06-01 in data source.
+2020-05-22 17:39:38 wfm INFO Found date '2020-06-02 in data source.
+2020-05-22 17:39:38 wfm INFO Found date '2020-06-03 in data source.
+2020-05-22 17:39:38 wfm INFO Found date '2020-06-04 in data source.
+2020-05-22 17:39:38 wfm INFO Found date '2020-06-05 in data source.
+2020-05-22 17:39:38 wfm INFO Found date '2020-06-06 in data source.
+2020-05-22 17:39:38 wfm INFO Found date '2020-06-07 in data source.
+2020-05-22 17:39:38 wfm INFO Found date '2020-06-08 in data source.
+2020-05-22 17:39:38 wfm INFO Found date '2020-06-09 in data source.
+2020-05-22 17:39:38 wfm INFO Found date '2020-06-10 in data source.
+2020-05-22 17:39:38 wfm INFO Forecast dictionary successfully built.
+2020-05-22 17:39:38 wfm INFO Generating forecast data.
+2020-05-22 17:39:45 wfm INFO Forecast successfully built.
+2020-05-22 17:39:45 wfm INFO Creating file 'forecast/forecast-summary.json'.
+2020-05-22 17:39:45 wfm INFO File 'forecast/forecast-summary.json' successfully saved.
+2020-05-22 17:39:45 wfm INFO Calculating KPIs for maximum transactions volume.
+2020-05-22 17:39:45 wfm INFO Largest transaction volume found on 2020/06/07 at 18:00 with 150 calls.
+2020-05-22 17:39:45 wfm INFO Using largest volume of 150 transactions for summary calculations.
+2020-05-22 17:39:45 wfm INFO Agents:         19
+2020-05-22 17:39:45 wfm INFO Utilisation:    76.75%
+2020-05-22 17:39:45 wfm INFO Trunks:         29
+2020-05-22 17:39:45 wfm INFO SLA:            86.25%
+2020-05-22 17:39:45 wfm INFO ASA:            16 sec
+2020-05-22 17:39:45 wfm INFO Abandoned:      13.75%
+2020-05-22 17:39:45 wfm INFO Queued:         20.08%
+2020-05-22 17:39:45 wfm INFO Queue Time      79 sec
+2020-05-22 17:39:45 wfm INFO Queue Size      1
+2020-05-22 17:39:45 wfm INFO File 'forecast/forecast.xlsx' successfully loaded.
+2020-05-22 17:39:45 wfm INFO Sheet named 'Summary' created.
+2020-05-22 17:39:45 wfm INFO Times column written.
+2020-05-22 17:39:45 wfm INFO Date row written.
+2020-05-22 17:39:45 wfm INFO Agent forecast completed.
+2020-05-22 17:39:45 wfm INFO Creating detailed report.
+2020-05-22 17:39:45 wfm INFO File 'forecast/forecast.xlsx' successfully saved.
+2020-05-22 17:39:45 wfm INFO Execution successfully completed. Have a nice day.

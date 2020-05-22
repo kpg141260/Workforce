@@ -1,0 +1,17 @@
+{
+    "ServiceInterval" : 60,
+    "OperationHours" :  24,
+    "SLA" :             0.8,
+    "AnswerTime" :      40,
+    "TalkTime" :        240,
+    "ServiceTime" :     30,
+    "AfterCallWork" :   30,
+    "AbandonTime" :     30,
+    "MaxWait" :         50,
+    "NonVoice" :        0,
+    "Availability":     0.85,
+    "Concurrency" :     1,
+    "ForecastDays" :    10,
+    "Intervals":        [15, 30, 45, 60],
+    "WorkingDays":      [0, 1, 2, 3, 4, 5, 6]
+}
