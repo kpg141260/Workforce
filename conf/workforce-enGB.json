@@ -29,7 +29,7 @@
         "0013": "Maximum Allowable Wait Time {} cannot be less than or equal to 0. Please check file '{}' Key 'MaxWait'."
     },
     "warnings": {
-        "0001": "Found {} day columns in '{}', but {} 'ForecastDays' are specified in '{}'! Using {} days for forecast."
+        "0001": "Found {} day columns in '{}', but only {} 'ForecastDays' are specified in '{}'! Using {} days for forecast."
     },
     "fatal": {
         "0001": "Execution aborted due to Error!"

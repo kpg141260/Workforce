@@ -32,57 +32,21 @@ class Erlang:
     #   ops_hrs   - Operational hours of the contact center e.g. 8, 16, 24
     def __init__(self, sla, tta, ait, aiw, abnt, max_wait, nv, ccc, interval, ops_hrs, avail=1.0):
         try:
-            #print("Erlang constructor called.")
-            self.local_dir = str(Path.script_dir())
-            if sla > 1.00 or sla <= 0:
-                raise ValueError("sla: 0 < sla <= 1.00!")
-            else:
-                self.sla = sla
-            if tta <= 0:
-                raise ValueError("tta must be larger than 0!")
-            else:
-                self.tta = tta
-            self.avail = avail
-            if avail < 0.1 or avail > 1.0:
-                 raise ValueError("Agent availability 'avail' must be larger than 0.1 and less then or equal to 1.0!")
-            if (ait + aiw) <= 0:
-                raise ValueError("ait + aic must be larger than 0!")
-            else:
-                self.aht = aiw + ait  / self.avail # reflect agent availability
-                self.aiw = aiw
-                self.ait = ait
-            if abnt <= 0:
-                raise ValueError("abnt must be larger than 0!")
-            else:
-                self.abnt = abnt
-            if max_wait <= 0:
-                raise ValueError("max_wait must be larger than 0!")
-            else:
-                self.max_wait = max_wait
-            self.nv  = nv
-            if ccc <= 0:
-                raise ValueError("ccc must be larger than 0!")
-            else:
-                if self.nv != True:
-                    self.ccc = 1
-                else: 
-                    self.ccc = ccc
-            # Check if an agent can take more than 1 interaction, in the case of chat etc.
-            if self.nv and self.ccc > 1:
-                self.aht = ((self.ait / self.ccc) + self.aiw * self.ccc)
-            if interval != 15 and interval != 30 and interval != 45 and interval != 60:
-                raise ValueError("Interval must be either 15, 30, 45 or 60 minutes!")
-            else:
-                self.interval  = interval * 60 # convert interval from minutes to seconds
-            if ops_hrs != 8 and ops_hrs != 16 and ops_hrs != 24:  
-                raise ValueError("ops_hrs must be either 8, 16 or 24 hours!")
-            else:
-                self.ops_hrs   = ops_hrs
-            self.deathrate = self.interval / self.aht
-
             self.logger = logging.getLogger('erlang')
+            self.logger.info ("ErlangC constructor called.")
+            self.local_dir = str(Path.script_dir())
+            self.logger = logging.getLogger()
+            self.setSLA (sla)
+            self.setTTA (tta)
+            self.setAVAIL (avail)
+            self.setABN (abnt)
+            self.setMAXWAIT (max_wait)
+            self.setNVCCC (nv, ccc)
+            self.setInterval (interval)
+            self.setOPSHRS (ops_hrs)
+            self.deathrate = self.interval / self.aht
         except ValueError as ve:
-                print (ve)
+                self.logger.fatal (ve)
 
     def print_info (self):
         myerror = "SLA: {0}% / {1} sec"
@@ -103,7 +67,95 @@ class Erlang:
         return
 
     def __DEL__ (self):
-        logger.info ("Erlang object deleted.")
+        self.logger.info ("Erlang object deleted.")
+
+    def getSLA (self):
+        return self.sla
+
+    def setSLA (self, sla):
+        if sla > 1.00 or sla <= 0:
+            raise ValueError("sla: 0 < sla <= 1.00!")
+        else:
+            self.sla = sla
+    def getTTA (self):
+        return self.tta
+    def setTTA (self, tta):
+        if tta <= 0:
+            raise ValueError("tta must be larger than 0!")
+        else:
+            self.tta = tta
+    def getAIT (self):
+        return self.ait
+    def setAIT (self, ait):
+        if (ait + self.aiw) <= 0:
+            raise ValueError("ait + aic must be larger than 0!")
+        else:
+            self.aht = self.aiw + ait  / self.avail # reflect agent availability
+            self.ait = int (ait)
+    def getAIW (self):
+        return self.aiw
+    def setAIW (self, aiw):
+        if (self.ait + aiw) <= 0:
+            raise ValueError("ait + aic must be larger than 0!")
+        else:
+            self.aht = aiw + self.ait  / self.avail # reflect agent availability
+            self.aiw = int (aiw)
+    def getAHT (self):
+        return (self.ait / self.ccc) + (self.aiw * self.ccc)      
+    def getABN (self):
+        return self.abnt
+    def setABN (self, abnt):
+        if abnt <= 0:
+            raise ValueError("abnt must be larger than 0!")
+        else:
+            self.abnt = abnt
+    def getMAXWAIT (self):
+        return self.max_wait
+    def setMAXWAIT (self, max_wait):
+        if max_wait <= 0:
+            raise ValueError("max_wait must be larger than 0!")
+        else:
+            self.max_wait = max_wait
+    def getNV (self):
+        return self.nv
+    def getCCC (self):
+        return self.ccc
+    def setNVCCC (self, nv, ccc):
+        self.nv  = nv
+        if ccc <= 0:
+            raise ValueError("ccc must be larger than 0!")
+        else:
+            if self.nv != True:
+                self.ccc = 1
+            else: 
+                self.ccc = ccc
+            self.setAHT()
+    def setAHT (self):
+        # Check if an agent can take more than 1 interaction, in the case of chat etc.
+        if self.nv and self.ccc > 1:
+            self.aht = ((self.ait / self.ccc) + self.aiw * self.ccc)
+    def getInterval (self):
+        return self.interval
+    def setInterval (self, interval):
+        if interval != 15 and interval != 30 and interval != 45 and interval != 60:
+            raise ValueError("Interval must be either 15, 30, 45 or 60 minutes!")
+        else:
+            self.interval  = interval * 60 # convert interval from minutes to seconds
+    def getOPSHRS (self):
+        return self.ops_hrs
+    def setOPSHRS (self, ops_hrs):
+        if ops_hrs <=0 or ops_hrs > 24:  
+            raise ValueError("ops_hrs must be larger than 0 hours and less than 24 hours!")
+        else:
+            self.ops_hrs = ops_hrs
+    def getAVAIL (self):
+        return self.avail
+    def setAVAIL (self, avail):
+        if avail < 0.1 or avail > 1.0:
+                raise ValueError("Agent availability 'avail' must be larger than 0.1 and less then or equal to 1.0!")
+        else: 
+            self.avail = avail
+            self.setAHT()
         
     ###############################################
     ### Erlang Contact Center Related Functions ###
@@ -133,10 +185,10 @@ class Erlang:
                 i += 1
             return self.base.MinMax(B,0,1)
         except ValueError as ve:
-            logger.error (ve)
+            self.logger.error (ve)
             return 0
         except:
-            logger.error ('General error')
+            self.logger.error ('General error')
             return 0
 
     #   -------------------------------------------------------------------------------------------
@@ -167,10 +219,10 @@ class Erlang:
                 i = i + 1
             return self.base.MinMax(B, 0 ,1)
         except ValueError as ve:
-            logger.error (ve)
+            self.logger.error (ve)
             return 0
         except:
-            logger.error ('General error')
+            self.logger.error ('General error')
             return 0
 
     #   -------------------------------------------------------------------------------------------
@@ -199,10 +251,10 @@ class Erlang:
             else:
                 return self.base.MinMax(B,0,1)
         except ValueError as ve:
-            logger.error (ve)
+            self.logger.error (ve)
             return 0
         except:
-            logger.error ('General error')
+            self.logger.error ('General error')
             return 0
 
     #   -------------------------------------------------------------------------------------------
@@ -222,10 +274,10 @@ class Erlang:
             C = B / (((intensity / agents) * B) + (1 - (intensity / agents)))
             return self.base.MinMax(C,0,1)
         except ValueError as ve:
-            logger.error (ve)
+            self.logger.error (ve)
             return 0
         except:
-            logger.error ('General error')
+            self.logger.error ('General error')
             return 0
 
     #   -------------------------------------------------------------------------------------------
@@ -255,10 +307,10 @@ class Erlang:
                 i = 0
             return i
         except ValueError as ve:
-            logger.error (ve)
+            self.logger.error (ve)
             return 0
         except:
-            logger.error ('General error')
+            self.logger.error ('General error')
             return 0
 
     #   -------------------------------------------------------------------------------------------
@@ -286,10 +338,10 @@ class Erlang:
                 i += 1
             return i
         except ValueError as ve:
-            logger.error (ve)
+            self.logger.error (ve)
             return 0
         except:
-            logger.error ('General error')
+            self.logger.error ('General error')
             return 0
 
     #   -------------------------------------------------------------------------------------------
@@ -314,10 +366,10 @@ class Erlang:
                 Last = B
             return i
         except ValueError as ve:
-            logger.error (ve)
+            self.logger.error (ve)
             return 0
         except:
-            logger.error ('General error')
+            self.logger.error ('General error')
             return 0
 
     #   -------------------------------------------------------------------------------------------
@@ -352,10 +404,10 @@ class Erlang:
                 loop += 1
             return minI
         except ValueError as ve:
-            logger.error (ve)
+            self.logger.error (ve)
             return 0
         except:
-            logger.error ('General error')
+            self.logger.error ('General error')
             return 0
 
     #   -------------------------------------------------------------------------------------------
@@ -385,10 +437,10 @@ class Erlang:
                 incr *= 10
             return self.LoopingTraffic(Trunks, blocking, incr, maxL)
         except ValueError as ve:
-            logger.error (ve)
+            self.logger.error (ve)
             return 0
         except:
-            logger.error ('General error')
+            self.logger.error ('General error')
             return 0
     
     ########################################################
@@ -420,10 +472,10 @@ class Erlang:
             A = C * math.exp((trafficrate - agents)*(self.abnt/self.aht))
             return self.base.MinMax(A,0,1)
         except ValueError as ve:
-            logger.error (ve)
+            self.logger.error (ve)
             return 0
         except:
-            logger.error ('General error')
+            self.logger.error ('General error')
             return 0
 
     #   -------------------------------------------------------------------------------------------
@@ -484,10 +536,10 @@ class Erlang:
                 i += 1
             return no_agents
         except ValueError as ve:
-            logger.error (ve)
+            self.logger.error (ve)
             return 0
         except:
-            logger.error ('General error')
+            self.logger.error ('General error')
             return 0
         #   Agents
     
@@ -536,10 +588,10 @@ class Erlang:
             # end while
             return no_agents
         except ValueError as ve:
-            logger.error (ve)
+            self.logger.error (ve)
             return 0
         except:
-            logger.error ('General error')
+            self.logger.error ('General error')
             return 0
 
     #   ASA (int, int)
@@ -561,10 +613,10 @@ class Erlang:
             at = C / (agents * self.deathrate * (1 - utilisation))
             return self.base.hours_to_secs(at)
         except ValueError as ve:
-            logger.error (ve)
+            self.logger.error (ve)
             return 0
         except:
-            logger.error ('General error')
+            self.logger.error ('General error')
             return 0
 
     #   -------------------------------------------------------------------------------------------
@@ -595,10 +647,10 @@ class Erlang:
             #end while
             return calls
         except ValueError as ve:
-            logger.error (ve)
+            self.logger.error (ve)
             return 0
         except:
-            logger.error ('General error')
+            self.logger.error ('General error')
             return 0
 
     #   -------------------------------------------------------------------------------------------
@@ -675,10 +727,10 @@ class Erlang:
             # end if
             return no_agents_sng
         except ValueError as ve:
-            logger.error (ve)
+            self.logger.error (ve)
             return 0
         except:
-            logger.error ('General error')
+            self.logger.error ('General error')
             return 0
 
     #   -------------------------------------------------------------------------------------------
@@ -708,10 +760,10 @@ class Erlang:
                 xagent = self.FractionalAgents (service_time, calls)
             return calls
         except ValueError as ve:
-            logger.error (ve)
+            self.logger.error (ve)
             return 0
         except:
-            logger.error ('General error')
+            self.logger.error ('General error')
             return 0
 
     #   -------------------------------------------------------------------------------------------
@@ -733,10 +785,10 @@ class Erlang:
             trafficrate = transactions / self.deathrate
             return self.base.MinMax(self.ErlangC(agents, trafficrate), 0, 1)
         except ValueError as ve:
-            logger.error (ve)
+            self.logger.error (ve)
             return 0
         except:
-            logger.error ('General error')
+            self.logger.error ('General error')
             return 0
 
     #   -------------------------------------------------------------------------------------------
@@ -763,10 +815,10 @@ class Erlang:
             qsize = (utilisation * C) / (1 - utilisation)
             return self.base.FixInt(qsize + 0.5)
         except ValueError as ve:
-            logger.error (ve)
+            self.logger.error (ve)
             return 0
         except:
-            logger.error ('General error')
+            self.logger.error ('General error')
             return 0
 
     #   -------------------------------------------------------------------------------------------
@@ -793,10 +845,10 @@ class Erlang:
             qtime = 1 / (agents * self.deathrate * ( 1 - utilisation))
             return self.base.hours_to_secs(qtime)
         except ValueError as ve:
-            logger.error (ve)
+            self.logger.error (ve)
             return 0
         except:
-            logger.error ('General error')
+            self.logger.error ('General error')
             return 0
 
     #   -------------------------------------------------------------------------------------------
@@ -834,10 +886,10 @@ class Erlang:
                 adjust = 1
             return self.base.FixInt(stime + adjust)
         except ValueError as ve:
-            logger.error (ve)
+            self.logger.error (ve)
             return 0
         except:
-            logger.error ('General error')
+            self.logger.error ('General error')
             return 0
 
     #   -------------------------------------------------------------------------------------------
@@ -868,10 +920,10 @@ class Erlang:
             SLQueued = 1 - C * math.exp((trafficrate - agents) * service_time / self.aht)        
             return self.base.MinMax(SLQueued, 0, 1)
         except ValueError as ve:
-            logger.error (ve)
+            self.logger.error (ve)
             return 0
         except:
-            logger.error ('General error')
+            self.logger.error ('General error')
             return 0
 
     #   -------------------------------------------------------------------------------------------
@@ -907,10 +959,10 @@ class Erlang:
                 no_trunks = 1
             return no_trunks
         except ValueError as ve:
-            logger.error (ve)
+            self.logger.error (ve)
             return 0
         except:
-            logger.error ('General error')
+            self.logger.error ('General error')
             return 0
 
     #   -------------------------------------------------------------------------------------------
@@ -932,8 +984,8 @@ class Erlang:
             trafficrate = transactions / self.deathrate
             return self.base.MinMax(trafficrate / agents, 0, 1)
         except ValueError as ve:
-            logger.error (ve)
+            self.logger.error (ve)
             return 0
         except:
-            logger.error ('General error')
+            self.logger.error ('General error')
             return 0
