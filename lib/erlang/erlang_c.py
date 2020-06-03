@@ -32,16 +32,29 @@ class Erlang:
     #   ops_hrs   - Operational hours of the contact center e.g. 8, 16, 24
     def __init__(self, sla, tta, ait, aiw, abnt, max_wait, nv, ccc, interval, ops_hrs, avail=1.0):
         try:
+            self.nv = nv
+            self.ccc = ccc
+            self.sla = 0.0
+            self.tta = 0
+            self.ait = 0
+            self.aiw = 0
+            self.aht = 0
+            self.abnt = 0.0
+            self.max_wait = 0
+            self.interval = 0
+            self.ops_hrs = 0
+            self.avail = avail
             self.logger = logging.getLogger('erlang')
             self.logger.info ("ErlangC constructor called.")
             self.local_dir = str(Path.script_dir())
-            self.logger = logging.getLogger()
             self.setSLA (sla)
             self.setTTA (tta)
             self.setAVAIL (avail)
             self.setABN (abnt)
             self.setMAXWAIT (max_wait)
             self.setNVCCC (nv, ccc)
+            self.setAIT (ait)
+            self.setAIW (aiw)
             self.setInterval (interval)
             self.setOPSHRS (ops_hrs)
             self.deathrate = self.interval / self.aht

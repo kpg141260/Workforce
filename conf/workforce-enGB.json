@@ -11,7 +11,12 @@
         "0009": "Abandoned:      {:0.2f}%",
         "0010": "Queued:         {:0.2f}%",
         "0011": "Queue Time      {} sec",
-        "0012": "Queue Size      {}"
+        "0012": "Queue Size      {}",
+        "0013": "Morning",
+        "0014": "Day",
+        "0015": "Afternoon",
+        "0016": "Evening",
+        "0017": "Night"
     },
     "errors": {
         "0001": "The Service Interval (actual is {} min) calculated from data provided in file {} has to be either 15, 30, 45, or 60 min.",
@@ -26,10 +31,17 @@
         "0010": "Service Time {} cannot be less than or equal to 0. Please check file '{}' Key 'ServiceTime'.",
         "0011": "After Transaction Wrap {} cannot be less than or equal to 0. Please check file '{}' Key 'AfterCallWork'.",
         "0012": "Time to Abandon {} cannot be less than or equal to 0. Please check file '{}' Key 'AbandonTime'.",
-        "0013": "Maximum Allowable Wait Time {} cannot be less than or equal to 0. Please check file '{}' Key 'MaxWait'."
+        "0013": "Maximum Allowable Wait Time {} cannot be less than or equal to 0. Please check file '{}' Key 'MaxWait'.",
+        "0014": "Type of cell (row: {}, col: {} not as expected - is type '{}' but should be of type 'datetime'. Processing of data source terminated.",
+        "0015": "Cell (row: {}, col: {} is empty (value = None) but should  a time value. Processing of data source terminated.",
+        "0016": "The class wfm_xl has not been initialised correctly. Has method xlPreProcessSource been called before any other wfm_xl operation?",
+        "0017": "An unknown error has occurred while opening file '{}'."
     },
     "warnings": {
-        "0001": "Found {} day columns in '{}', but only {} 'ForecastDays' are specified in '{}'! Using {} days for forecast."
+        "0001": "Found {} day columns in '{}', but only {} 'ForecastDays' are specified in '{}'! Using {} days for forecast.",
+        "0002": "Record for date '{0}' already exists in db '{1}.{2}' >>> date '{0}' NOT IMPORTED <<<",
+        "0003": "Type of cell (row: {}, col: {} not as expected - is type '{}' but should be of type 'datetime'. Database import terminated.",
+        "0004": "Excel import to database encountered errors."
     },
     "fatal": {
         "0001": "Execution aborted due to Error!"
@@ -43,17 +55,17 @@
         "0006": "Number of Intervals in each day = {}.",
         "0007": "Starting to build forecast dictionary.",
         "0008": "Forecast dictionary successfully built.",
-        "0009": "Execution successfully completed. Have a nice day.",
-        "0010": "Building forecast summary omitted. To enable forecast summary please set 'summary' in 'forecast.conf' to 1.",
+        "0009": "Version: {} >>> Execution successfully completed. Have a nice {}.",
+        "0010": "Building forecast summary omitted. To enable forecast summary please set 'summary' in '{}' to 'true'.",
         "0011": "File '{}' successfully saved.",
-        "0012": "Generating forecast data.",
+        "0012": "Generating forecast report....",
         "0013": "Creating file '{}'.",
-        "0014": "Forecast successfully built.",
+        "0014": "Forecast build successfully completed.",
         "0015": "File '{}' successfully loaded.",
         "0016": "Path '{}' created.",
         "0017": "Path '{}' already exists.",
-        "0018": "File '{}' exists.",
-        "0019": "File '{}' created.",
+        "0018": "File '{}' already exists.",
+        "0019": "File '{}' successfully created.",
         "0020": "The following parameters have been specified in the {} file:",
         "0021": "Building summary forecast spread sheet '{}'.",
         "0022": "Sheet named '{}' created.",
@@ -61,7 +73,17 @@
         "0024": "Date row written.",
         "0025": "Agent forecast completed.",
         "0026": "Creating detailed report.",
-        "0027": "Not creating detailed forecast report. Check 'workforce.conf' flag 'excel.report-details' and set to 'true'."
+        "0027": "Not creating detailed forecast report. Check 'workforce.conf' flag 'excel.report-details' and set to 'true'.",
+        "0028": "Starting forecast calculations...",
+        "0029": "Attempting to connect to database '{}' on '{} at Port '{}'",
+        "0030": "Connection to database '{}' on '{} at Port '{} established.",
+        "0031": "Checking forecast framework parameters for errors...",
+        "0032": "Forecast framework parameter check passed.",
+        "0033": "Workforce Forecast Module started.",
+        "0034": "Imported {} days and {} total records. The 'history' table now contains {} day records.",
+        "0035": "Export to database not yet implemented.",
+        "0036": "Export to Excel omitted - check configuration.",
+        "0037": "Export to database omitted - check configuration."
     },
     "debug": {
         "0001": "Log system activated."

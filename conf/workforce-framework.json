@@ -11,7 +11,8 @@
     "NonVoice" :        0,
     "Availability":     0.85,
     "Concurrency" :     1,
-    "ForecastDays" :    10,
+    "FCStartDate":      "2020/06/01",
+    "ForecastDays":     30,
     "Intervals":        [15, 30, 45, 60],
     "WorkingDays":      [0, 1, 2, 3, 4, 5, 6]
 }

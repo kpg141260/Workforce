@@ -3,5 +3,29 @@
 		{
 			"path": "."
 		}
-	]
+	],
+	"settings": {
+		"cSpell.words": [
+			"Bolte",
+			"Erlangs",
+			"J",
+			"Jørn",
+			"Lodahl",
+			"Srvc",
+			"fract",
+			"getdb",
+			"initialised",
+			"intv",
+			"pymongo",
+			"qpercent",
+			"qsize",
+			"qtime",
+			"rn",
+			"smonth",
+			"sngcnt",
+			"stime",
+			"strt",
+			"xagent"
+		]
+	}
 }

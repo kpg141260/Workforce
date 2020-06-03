@@ -1,0 +1,13 @@
+{
+    "date":"2020/06/01", 
+    "time":"06:00", 
+    "calls": 10, 
+    "agents":1, 
+    "util":0.98, 
+    "sla":0.4, 
+    "asa": 35, 
+    "abandon":0.2, 
+    "q_percent": 0.3, 
+    "q_time": 33, 
+    "q_count": 2
+}
