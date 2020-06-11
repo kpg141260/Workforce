@@ -9,10 +9,11 @@
     "AbandonTime" :     30,
     "MaxWait" :         50,
     "NonVoice" :        0,
-    "Availability":     0.85,
+    "Availability":     0.75,
+    "UtilLimit":        0.90,
     "Concurrency" :     1,
     "FCStartDate":      "2020/06/01",
-    "ForecastDays":     30,
+    "ForecastDays":     90,
     "Intervals":        [15, 30, 45, 60],
     "WorkingDays":      [0, 1, 2, 3, 4, 5, 6]
 }

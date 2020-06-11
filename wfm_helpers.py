@@ -14,12 +14,12 @@ from __version import __product__
 # ================== Helper function to configure the python logger ==================
 def config_logger (env, id):
     truncated = False
-    f_log =  os.path.join (os.getcwd(), str(env['paths']['log-path']), str(env['files']['log-file']))
+    f_log =  os.path.join (os.getcwd(), str(env['paths']['log-path']), str(env['log-conf']['log-file']))
     if not os.path.exists(env['paths']['log-path']):
         os.makedirs(env['paths']['log-path'], mode=0o666, exist_ok=True)
     if os.path.exists(f_log) == False:
         os.chdir (env['paths']['log-path'])
-        fp = open (env['files']['log-file'], "w+")
+        fp = open (env['log-conf']['log-file'], "w+")
         fp.close()
         os.chdir ('..')
     else:
@@ -71,6 +71,16 @@ def config_logger (env, id):
     del f_log
     return logger
 
+def set_log_color(msg):
+    colors = {
+        10: "\033[36m{}\033[0m",       # DEBUG
+        20: "\033[32m{}\033[0m",       # INFO
+        30: "\033[33m{}\033[0m",       # WARNING
+        40: "\033[31m{}\033[0m",       # ERROR
+        50: "\033[7;31;31m{}\033[0m"   # FATAL/CRITICAL/EXCEPTION
+    }
+    return colors[int(logging.root.level)].format(msg)
+
 #  ================== Helper function for all the necessary file IO operations ==================
 def createFileNames (dict, env, logger):
     # Check if append-date flag is set and construct file name accordingly:
@@ -87,10 +97,11 @@ def createFileNames (dict, env, logger):
         dict['fs_nopath'] = os.path.join (str.format("{}.{}", str(env['files']['summary']), str(env['files']['ext-json'])))
         dict['fr_nopath'] = os.path.join (str.format("{}.{}", str(env['files']['out-data']), str(env['files']['ext-xl'])))
     
-    f_res               = os.path.join (os.getcwd(), env['paths']['config-path'], str.format("{}-{}.{}", env['files']['language-file'], env['encoding']['language'], env['files']['language-type']))
+    f_res               = os.path.join (os.getcwd(), env['paths']['rsrc-path'], str.format("{}-{}.{}", env['files']['language-file'], env['encoding']['language'], env['files']['language-type']))
     dict['f_resource']  = f_res
-    dict['f_frame']     = os.path.join (os.getcwd(), env['paths']['config-path'], env['files']['framework'])
+    dict['f_frame']     = os.path.join (env['paths']['input-path'], env['files']['framework'])
     dict['f_xl_data']   = os.path.join (env['paths']['input-path'], env['files']['in-data'])
+    dict['f_xl_full']   = os.path.join (os.getcwd(), env['paths']['input-path'], env['files']['in-data'])
 
     # Check if forecast resource file exists and load it.
     if os.path.exists(f_res) == False:
@@ -227,4 +238,13 @@ def getExitString (dic_cnf):
         return str_tmp
     except Exception as e:
         raise (e)
+
+def logTimeStamp (start_time, msg, logger, force=False):
+    dif_time = datetime.now() - start_time
+    if force:
+        logger.info (msg.format (round (dif_time.total_seconds(), 3)))
+    else:
+        logger.debug (msg.format (round (dif_time.total_seconds(), 3)))
+
+
 

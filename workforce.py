@@ -7,6 +7,7 @@ import os
 import json
 from lib.erlang.erlang_base import Erlang_Base
 from lib.erlang.erlang_c import Erlang
+from datetime import datetime, timedelta
 #import threading
 #import lib.gui.workforce_gui
 
@@ -21,7 +22,8 @@ try:
 
 # ================== Preparation to get everything going ==================
     # Load configuration file
-    f_conf = os.path.join ('conf', 'workforce.conf')
+    start_time = datetime.now()
+    f_conf = os.path.join ('conf', 'wfms.conf')
     with open (f_conf) as json_file:
         env = json.load(json_file)
     del f_conf
@@ -29,10 +31,10 @@ try:
     # Enable Debug level logging and set logging defaults
     logger_wfm = wfm_helpers.config_logger (env, 'wfm')
     # Create resource dictionary
-    dic_cnf = {'f_summary':'', 'f_result':'', 'fs_nopath':'', 'fr_nopath':'', 'f_frame':'', 'f_xl_data':'', 'sf_time':'', 'sf_date':'', 'f_resource':'', 'res_strings':{}, 'fw':{}}
+    dic_cnf = {'f_summary':'', 'f_result':'', 'fs_nopath':'', 'fr_nopath':'', 'f_frame':'', 'f_xl_data':'', 'f_xl_full':'', 'sf_time':'', 'sf_date':'', 'f_resource':'', 'res_strings':{}, 'fw':{}}
     wfm_helpers.createFileNames(dic_cnf, env, logger_wfm)
     # Log the forecast framework
-    if (env['options']['log-summary']):
+    if (env['log-conf']['log-summary']):
         wfm_helpers.logForecastFramework (dic_cnf, logger_wfm)
 
 # TODO: #2 add some code to pop up a confirmation window here at a later state
@@ -42,25 +44,28 @@ try:
 # ================== Load and process source data - change here if database is source ==================
     # TODO: #3 Add code here to load data from database
     logger_wfm.info (dic_cnf['res_strings']['info']['0033'])
-
+    wfm_helpers.logTimeStamp(start_time, dic_cnf ['res_strings']['info']['0041'], logger_wfm)
     if (env['data-io']['source-from']['db']): # Check if import should be from db
-        pass
-        db = wfm_db.Wfm_db (env, dic_cnf['res_strings'], logger_wfm)
-        # TODO: Remove after db import
-        if (db.dbImportXL(dic_cnf)):
-            logger_wfm.error (dic_cnf['res_strings']['errors']['0015'])
-        del db
+        logger_wfm.info(str.format(dic_cnf['res_strings']['info']['0035'], dic_cnf['res_strings']['prompts']['0021']))
+# TODO: Remove after import from db is implemented
+    if (env['data-io']['import-to']['db']):
+        tgt = "{}:{}.{}.{}".format (env['db']['url'], env['db']['port'], env['db']['db-name'], env['db']['col-in'])
+        logger_wfm.info(str.format (dic_cnf['res_strings']['info']['0039'], tgt ))
+        db = wfm_db.Wfm_db (env, dic_cnf, logger_wfm)
+        db.dbImportXL ()
+        wfm_helpers.logTimeStamp(start_time, dic_cnf ['res_strings']['info']['0041'], logger_wfm)
+    else:
+        logger_wfm.info(dic_cnf['res_strings']['info']['0040'])
+    del db
 
     # ================== Preprocess spreadsheet data - check if times in the sheet make sense ================== 
-    dic_fc = {}
     xl_obj = wfm_xl.wfm_xl(env, dic_cnf, logger_wfm)
     if (env['data-io']['source-from']['excel']):
-        # ================== Sanity check for data read - compare parts of framework file with actual data  ==================
-        xl_obj.xlCheckImportDataValidity ()
         # ================== Build the Dictionary template for the required calculations ==================
-        xl_obj.xlCreateDictionary (dic_fc)
+        dic_fc = xl_obj.xlCreateDictionary ()
         # ================== Sanity check of framework data supplied ==================
         wfm_helpers.helperCheckFrameworkData (dic_cnf, logger_wfm)
+        wfm_helpers.logTimeStamp(start_time, dic_cnf ['res_strings']['info']['0041'], logger_wfm)
 
 # >>>>>>>>>>>>>>>>>> The actual forecast module / function follows below <<<<<<<<<<<<<<<<<<<
 
@@ -89,6 +94,7 @@ try:
             dic_fc[str_tmp]['q-time'].append(ec.QueueTime(agents, each_call))
             dic_fc[str_tmp]['q-count'].append(ec.QueueSize(agents, each_call))
             i += 1
+    wfm_helpers.logTimeStamp(start_time, dic_cnf ['res_strings']['info']['0041'], logger_wfm)
     del each_call
     del str_tmp
 
@@ -105,19 +111,19 @@ try:
 # ================== Build summary report for max transaction volume =======================
     agents = ec.Agents (dic_cnf['fw']['ServiceTime'], max_calls)
     # Construct Summary Forecast file - only if 'summary' flag is set to 1
-    if (env['options']['summary']):
+    if (env['output-format']['json']):
         logger_wfm.info (str.format(dic_cnf['res_strings']['info']['0013'], dic_cnf['f_summary']))
         wfm_helpers.createJSONSummary (agents, max_date, max_time, max_calls, ec, dic_cnf, logger_wfm)
-        # Log summary data to log file, if summary-log flag is true    
-        wfm_helpers.createLogSummary (agents, max_date, max_time, max_calls, ec, dic_cnf, logger_wfm)
-        logger_wfm.info (str.format(dic_cnf['res_strings']['info']['0019'], dic_cnf['f_summary']))
     else:
         logger_wfm.info(str.format(dic_cnf['res_strings']['info']['0010'], dic_cnf['f_resource']))
+    # Log summary data to log file, if summary-log flag is true    
+    if (env['log-conf']['log-summary']):
+        wfm_helpers.createLogSummary (agents, max_date, max_time, max_calls, ec, dic_cnf, logger_wfm)
 
 # ================== Build Excel Report - Agent count by day by Interval ==================
 # TODO: #1 Change export functions here...
     if (env['data-io']['export-to']['excel']):
-        xl_obj.xlCreateReport (dic_fc)
+        xl_obj.xlCreateReport(dic_fc)
         logger_wfm.info(dic_cnf['res_strings']['info']['0014'])
     else:
         logger_wfm.info(dic_cnf['res_strings']['info']['0036'])
@@ -125,16 +131,17 @@ try:
         logger_wfm.info(dic_cnf['res_strings']['info']['0035'])
     else:
         logger_wfm.info(dic_cnf['res_strings']['info']['0037'])
-
+    
 # ================== Final Cleanup before exit ==================
     del xl_obj
     del json_file
     del json
     del os
     del ec
-    del env
     version = '.'.join(str(c) for c in __version__)
     logger_wfm.info(str.format(dic_cnf['res_strings']['info']['0009'], version, wfm_helpers.getExitString(dic_cnf)))
+    wfm_helpers.logTimeStamp(start_time, dic_cnf ['res_strings']['info']['0041'], logger_wfm, force=True)
+    del env
     del version
     del dic_fc
     del dic_cnf
