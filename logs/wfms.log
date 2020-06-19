@@ -1,0 +1,205 @@
+'2020-06-18:14:52:12,148  INFO     [wfm.config_logger:67] Workforce Forecast System version 0.3.0 loaded.
+'2020-06-18:14:52:12,148  DEBUG    [wfm.config_logger:68] Log system activated.
+'2020-06-18:14:52:12,149  INFO     [wfm.createFileNames:117] File '/Users/Peter/OneDrive/Development/Python/Workforce/res/wfms-enGB.json' successfully loaded.
+'2020-06-18:14:52:12,149  INFO     [wfm.createFileNames:125] File 'data/framework.json' successfully loaded.
+'2020-06-18:14:52:12,149  DEBUG    [wfm.createFileNames:133] Path 'res' exists.
+'2020-06-18:14:52:12,150  DEBUG    [wfm.createFileNames:133] Path 'conf' exists.
+'2020-06-18:14:52:12,150  DEBUG    [wfm.createFileNames:133] Path 'forecast' exists.
+'2020-06-18:14:52:12,150  DEBUG    [wfm.createFileNames:133] Path 'data' exists.
+'2020-06-18:14:52:12,150  DEBUG    [wfm.createFileNames:133] Path 'data' exists.
+'2020-06-18:14:52:12,150  DEBUG    [wfm.createFileNames:133] Path 'logs' exists.
+'2020-06-18:14:52:12,151  INFO     [wfm.createFileNames:139] File 'data/call_data-1.xlsx' exists.
+'2020-06-18:14:52:12,151  INFO     [wfm.createFileNames:149] File 'forecast/forecast.xlsx' exists.
+'2020-06-18:14:52:12,151  INFO     [wfm.createFileNames:158] File 'forecast/forecast-summary.json' exists.
+'2020-06-18:14:52:12,152  INFO     [wfm.<module>:59] Workforce Forecast Module started.
+'2020-06-18:14:52:12,152  DEBUG    [wfm.logTimeStamp:276] Elapsed Time 0.007 seconds.
+'2020-06-18:14:52:12,152  INFO     [wfm.<module>:73] Starting import of transaction data. Target: 10.10.0.8:27017.wfm_main_db.history.
+'2020-06-18:14:52:12,166  INFO     [wfm.__init__:55] Using complex spreadsheet for import - transaction data plus KPIs.
+'2020-06-18:14:52:12,167  INFO     [wfm.xlPreProcessComplex:234] Using file data/txn_kpi_history.xlsx as data source.
+'2020-06-18:14:52:15,470  DEBUG    [wfm.xlPreProcessComplex:236] Excel workbook data/txn_kpi_history.xlsx opened.
+'2020-06-18:14:52:15,471  INFO     [wfm.xlPreProcessComplex:245] Found forecast framework sheet 'Framework' in workbook 'data/txn_kpi_history.xlsx'.
+'2020-06-18:14:52:15,472  INFO     [wfm.xlReadFrameworkData:613] Loading forecast framework parameters from Workbook 'data/txn_kpi_history.xlsx', Sheet 'Framework'.
+'2020-06-18:14:52:15,474  INFO     [wfm.helperCheckFrameworkData:211] Checking forecast framework parameters for errors...
+'2020-06-18:14:52:15,475  INFO     [wfm.helperCheckFrameworkData:250] Forecast framework parameter check passed.
+'2020-06-18:14:52:22,309  WARNING  [wfm.xlPreProcessComplex:285] Cell A3 is not formatted as Date - import aborted.
+'2020-06-18:14:53:48,385  INFO     [wfm.config_logger:67] Workforce Forecast System version 0.3.0 loaded.
+'2020-06-18:14:53:48,386  DEBUG    [wfm.config_logger:68] Log system activated.
+'2020-06-18:14:53:48,386  INFO     [wfm.createFileNames:117] File '/Users/Peter/OneDrive/Development/Python/Workforce/res/wfms-enGB.json' successfully loaded.
+'2020-06-18:14:53:48,387  INFO     [wfm.createFileNames:125] File 'data/framework.json' successfully loaded.
+'2020-06-18:14:53:48,387  DEBUG    [wfm.createFileNames:133] Path 'res' exists.
+'2020-06-18:14:53:48,387  DEBUG    [wfm.createFileNames:133] Path 'conf' exists.
+'2020-06-18:14:53:48,387  DEBUG    [wfm.createFileNames:133] Path 'forecast' exists.
+'2020-06-18:14:53:48,387  DEBUG    [wfm.createFileNames:133] Path 'data' exists.
+'2020-06-18:14:53:48,388  DEBUG    [wfm.createFileNames:133] Path 'data' exists.
+'2020-06-18:14:53:48,388  DEBUG    [wfm.createFileNames:133] Path 'logs' exists.
+'2020-06-18:14:53:48,388  INFO     [wfm.createFileNames:139] File 'data/call_data-1.xlsx' exists.
+'2020-06-18:14:53:48,388  INFO     [wfm.createFileNames:149] File 'forecast/forecast.xlsx' exists.
+'2020-06-18:14:53:48,388  INFO     [wfm.createFileNames:158] File 'forecast/forecast-summary.json' exists.
+'2020-06-18:14:53:48,388  INFO     [wfm.<module>:59] Workforce Forecast Module started.
+'2020-06-18:14:53:48,389  DEBUG    [wfm.logTimeStamp:276] Elapsed Time 0.005 seconds.
+'2020-06-18:14:53:48,389  INFO     [wfm.<module>:73] Starting import of transaction data. Target: 10.10.0.8:27017.wfm_main_db.history.
+'2020-06-18:14:53:48,397  INFO     [wfm.__init__:55] Using complex spreadsheet for import - transaction data plus KPIs.
+'2020-06-18:14:53:48,398  INFO     [wfm.xlPreProcessComplex:234] Using file data/txn_kpi_history.xlsx as data source.
+'2020-06-18:14:53:50,688  DEBUG    [wfm.xlPreProcessComplex:236] Excel workbook data/txn_kpi_history.xlsx opened.
+'2020-06-18:14:53:50,688  INFO     [wfm.xlPreProcessComplex:245] Found forecast framework sheet 'Framework' in workbook 'data/txn_kpi_history.xlsx'.
+'2020-06-18:14:53:50,689  INFO     [wfm.xlReadFrameworkData:613] Loading forecast framework parameters from Workbook 'data/txn_kpi_history.xlsx', Sheet 'Framework'.
+'2020-06-18:14:53:50,690  INFO     [wfm.helperCheckFrameworkData:211] Checking forecast framework parameters for errors...
+'2020-06-18:14:53:50,690  INFO     [wfm.helperCheckFrameworkData:250] Forecast framework parameter check passed.
+'2020-06-18:14:53:58,575  WARNING  [wfm.xlPreProcessComplex:285] Cell A3 is not formatted as Date - import aborted.
+'2020-06-18:14:56:55,239  INFO     [wfm.config_logger:67] Workforce Forecast System version 0.3.0 loaded.
+'2020-06-18:14:56:55,240  DEBUG    [wfm.config_logger:68] Log system activated.
+'2020-06-18:14:56:55,240  INFO     [wfm.createFileNames:117] File '/Users/Peter/OneDrive/Development/Python/Workforce/res/wfms-enGB.json' successfully loaded.
+'2020-06-18:14:56:55,241  INFO     [wfm.createFileNames:125] File 'data/framework.json' successfully loaded.
+'2020-06-18:14:56:55,241  DEBUG    [wfm.createFileNames:133] Path 'res' exists.
+'2020-06-18:14:56:55,241  DEBUG    [wfm.createFileNames:133] Path 'conf' exists.
+'2020-06-18:14:56:55,241  DEBUG    [wfm.createFileNames:133] Path 'forecast' exists.
+'2020-06-18:14:56:55,242  DEBUG    [wfm.createFileNames:133] Path 'data' exists.
+'2020-06-18:14:56:55,242  DEBUG    [wfm.createFileNames:133] Path 'data' exists.
+'2020-06-18:14:56:55,242  DEBUG    [wfm.createFileNames:133] Path 'logs' exists.
+'2020-06-18:14:56:55,242  INFO     [wfm.createFileNames:139] File 'data/call_data-1.xlsx' exists.
+'2020-06-18:14:56:55,243  INFO     [wfm.createFileNames:149] File 'forecast/forecast.xlsx' exists.
+'2020-06-18:14:56:55,243  INFO     [wfm.createFileNames:158] File 'forecast/forecast-summary.json' exists.
+'2020-06-18:14:56:55,243  INFO     [wfm.<module>:59] Workforce Forecast Module started.
+'2020-06-18:14:56:55,243  DEBUG    [wfm.logTimeStamp:276] Elapsed Time 0.005 seconds.
+'2020-06-18:14:56:55,243  INFO     [wfm.<module>:73] Starting import of transaction data. Target: 10.10.0.8:27017.wfm_main_db.history.
+'2020-06-18:14:56:55,258  INFO     [wfm.__init__:55] Using complex spreadsheet for import - transaction data plus KPIs.
+'2020-06-18:14:56:55,259  INFO     [wfm.xlPreProcessComplex:234] Using file data/txn_kpi_history.xlsx as data source.
+'2020-06-18:14:56:58,107  DEBUG    [wfm.xlPreProcessComplex:236] Excel workbook data/txn_kpi_history.xlsx opened.
+'2020-06-18:14:56:58,108  INFO     [wfm.xlPreProcessComplex:245] Found forecast framework sheet 'Framework' in workbook 'data/txn_kpi_history.xlsx'.
+'2020-06-18:14:56:58,108  INFO     [wfm.xlReadFrameworkData:613] Loading forecast framework parameters from Workbook 'data/txn_kpi_history.xlsx', Sheet 'Framework'.
+'2020-06-18:14:56:58,109  INFO     [wfm.helperCheckFrameworkData:211] Checking forecast framework parameters for errors...
+'2020-06-18:14:56:58,110  INFO     [wfm.helperCheckFrameworkData:250] Forecast framework parameter check passed.
+'2020-06-18:14:57:03,94   WARNING  [wfm.xlPreProcessComplex:285] Cell A3 is not formatted as Date - import aborted.
+'2020-06-18:15:11:33,821  INFO     [wfm.config_logger:67] Workforce Forecast System version 0.3.0 loaded.
+'2020-06-18:15:11:33,836  DEBUG    [wfm.config_logger:68] Log system activated.
+'2020-06-18:15:11:33,837  INFO     [wfm.createFileNames:117] File '/Users/Peter/OneDrive/Development/Python/Workforce/res/wfms-enGB.json' successfully loaded.
+'2020-06-18:15:11:33,838  INFO     [wfm.createFileNames:125] File 'data/framework.json' successfully loaded.
+'2020-06-18:15:11:33,838  DEBUG    [wfm.createFileNames:133] Path 'res' exists.
+'2020-06-18:15:11:33,838  DEBUG    [wfm.createFileNames:133] Path 'conf' exists.
+'2020-06-18:15:11:33,839  DEBUG    [wfm.createFileNames:133] Path 'forecast' exists.
+'2020-06-18:15:11:33,839  DEBUG    [wfm.createFileNames:133] Path 'data' exists.
+'2020-06-18:15:11:33,839  DEBUG    [wfm.createFileNames:133] Path 'data' exists.
+'2020-06-18:15:11:33,839  DEBUG    [wfm.createFileNames:133] Path 'logs' exists.
+'2020-06-18:15:11:33,839  INFO     [wfm.createFileNames:139] File 'data/call_data-1.xlsx' exists.
+'2020-06-18:15:11:33,840  INFO     [wfm.createFileNames:149] File 'forecast/forecast.xlsx' exists.
+'2020-06-18:15:11:33,840  INFO     [wfm.createFileNames:158] File 'forecast/forecast-summary.json' exists.
+'2020-06-18:15:11:33,840  INFO     [wfm.<module>:59] Workforce Forecast Module started.
+'2020-06-18:15:11:33,840  DEBUG    [wfm.logTimeStamp:276] Elapsed Time 0.038 seconds.
+'2020-06-18:15:11:33,840  INFO     [wfm.<module>:73] Starting import of transaction data. Target: 10.10.0.8:27017.wfm_main_db.history.
+'2020-06-18:15:11:34,37   INFO     [wfm.__init__:55] Using complex spreadsheet for import - transaction data plus KPIs.
+'2020-06-18:15:11:34,38   INFO     [wfm.xlPreProcessComplex:234] Using file data/txn_kpi_history.xlsx as data source.
+'2020-06-18:15:11:36,880  DEBUG    [wfm.xlPreProcessComplex:236] Excel workbook data/txn_kpi_history.xlsx opened.
+'2020-06-18:15:11:36,880  INFO     [wfm.xlPreProcessComplex:245] Found forecast framework sheet 'Framework' in workbook 'data/txn_kpi_history.xlsx'.
+'2020-06-18:15:11:36,881  INFO     [wfm.xlReadFrameworkData:613] Loading forecast framework parameters from Workbook 'data/txn_kpi_history.xlsx', Sheet 'Framework'.
+'2020-06-18:15:11:36,883  INFO     [wfm.helperCheckFrameworkData:211] Checking forecast framework parameters for errors...
+'2020-06-18:15:11:36,883  INFO     [wfm.helperCheckFrameworkData:250] Forecast framework parameter check passed.
+'2020-06-18:15:12:13,421  WARNING  [wfm.xlPreProcessComplex:285] Cell A3 is not formatted as Date - import aborted.
+'2020-06-18:15:12:40,968  INFO     [wfm.config_logger:67] Workforce Forecast System version 0.3.0 loaded.
+'2020-06-18:15:12:40,969  DEBUG    [wfm.config_logger:68] Log system activated.
+'2020-06-18:15:12:40,991  INFO     [wfm.createFileNames:117] File '/Users/Peter/OneDrive/Development/Python/Workforce/res/wfms-enGB.json' successfully loaded.
+'2020-06-18:15:12:40,992  INFO     [wfm.createFileNames:125] File 'data/framework.json' successfully loaded.
+'2020-06-18:15:12:40,992  DEBUG    [wfm.createFileNames:133] Path 'res' exists.
+'2020-06-18:15:12:40,993  DEBUG    [wfm.createFileNames:133] Path 'conf' exists.
+'2020-06-18:15:12:40,993  DEBUG    [wfm.createFileNames:133] Path 'forecast' exists.
+'2020-06-18:15:12:40,993  DEBUG    [wfm.createFileNames:133] Path 'data' exists.
+'2020-06-18:15:12:40,993  DEBUG    [wfm.createFileNames:133] Path 'data' exists.
+'2020-06-18:15:12:40,994  DEBUG    [wfm.createFileNames:133] Path 'logs' exists.
+'2020-06-18:15:12:40,994  INFO     [wfm.createFileNames:139] File 'data/call_data-1.xlsx' exists.
+'2020-06-18:15:12:40,994  INFO     [wfm.createFileNames:149] File 'forecast/forecast.xlsx' exists.
+'2020-06-18:15:12:40,994  INFO     [wfm.createFileNames:158] File 'forecast/forecast-summary.json' exists.
+'2020-06-18:15:12:41,48   INFO     [wfm.<module>:59] Workforce Forecast Module started.
+'2020-06-18:15:12:41,48   DEBUG    [wfm.logTimeStamp:276] Elapsed Time 0.082 seconds.
+'2020-06-18:15:12:41,49   INFO     [wfm.<module>:73] Starting import of transaction data. Target: 10.10.0.8:27017.wfm_main_db.history.
+'2020-06-18:15:12:41,59   INFO     [wfm.__init__:55] Using complex spreadsheet for import - transaction data plus KPIs.
+'2020-06-18:15:12:41,59   INFO     [wfm.xlPreProcessComplex:234] Using file data/txn_kpi_history.xlsx as data source.
+'2020-06-18:15:12:43,262  DEBUG    [wfm.xlPreProcessComplex:236] Excel workbook data/txn_kpi_history.xlsx opened.
+'2020-06-18:15:12:43,262  INFO     [wfm.xlPreProcessComplex:245] Found forecast framework sheet 'Framework' in workbook 'data/txn_kpi_history.xlsx'.
+'2020-06-18:15:12:43,262  INFO     [wfm.xlReadFrameworkData:613] Loading forecast framework parameters from Workbook 'data/txn_kpi_history.xlsx', Sheet 'Framework'.
+'2020-06-18:15:12:43,264  INFO     [wfm.helperCheckFrameworkData:211] Checking forecast framework parameters for errors...
+'2020-06-18:15:12:43,264  INFO     [wfm.helperCheckFrameworkData:250] Forecast framework parameter check passed.
+'2020-06-18:15:12:43,691  DEBUG    [wfm.xlPreProcessComplex:346] Service Interval: 60 min, Start Time: 00:00 hours, Number of Days: 90, Intervals per Day: 24.
+'2020-06-18:15:12:43,691  DEBUG    [wfm.xlPreProcessComplex:347] Class wfm_xl fully initialised.
+'2020-06-18:15:12:43,692  INFO     [wfm.xlCheckImportDataValidity:461] Found 90 days that need to be processed.
+'2020-06-18:15:12:43,692  INFO     [wfm.xlCheckImportDataValidity:462] Found 24 intervals in each day.
+'2020-06-18:15:12:43,692  INFO     [wfm.xlCheckImportDataValidity:463] 2160 data points need to to be processed.
+'2020-06-18:15:12:43,692  INFO     [wfm.xlCheckImportDataValidity:464] Import data validity check completed.
+'2020-06-18:15:12:43,692  INFO     [wfm.dbConnect:92] Attempting to connect to MongoDB server on '10.10.0.8' at Port '27017', Connection Timeout = 10000. Socket Timeout = 5000.
+'2020-06-18:15:12:43,695  INFO     [wfm.dbConnect:101] Connection to MongoDB server on '10.10.0.8 at Port '27017' successful.
+'2020-06-18:15:12:43,695  INFO     [wfm.dbImportXLComplex:246] Attempting to connect to MongoDB database 'wfm_main_db'.
+'2020-06-18:15:12:43,707  INFO     [wfm.dbImportXLComplex:253] Connection to MongoDB database 'wfm_main_db' successful.
+'2020-06-18:15:12:43,707  INFO     [wfm.dbImportXLComplex:269] Starting import of historical transaction data from Excel to Database.
+'2020-06-18:15:12:43,707  CRITICAL [wfm.dbImportXLComplex:365] '<' not supported between instances of 'datetime.datetime' and 'int'
+'2020-06-18:15:15:12,709  INFO     [wfm.config_logger:67] Workforce Forecast System version 0.3.0 loaded.
+'2020-06-18:15:15:12,710  DEBUG    [wfm.config_logger:68] Log system activated.
+'2020-06-18:15:15:12,711  INFO     [wfm.createFileNames:117] File '/Users/Peter/OneDrive/Development/Python/Workforce/res/wfms-enGB.json' successfully loaded.
+'2020-06-18:15:15:12,712  INFO     [wfm.createFileNames:125] File 'data/framework.json' successfully loaded.
+'2020-06-18:15:15:12,712  DEBUG    [wfm.createFileNames:133] Path 'res' exists.
+'2020-06-18:15:15:12,713  DEBUG    [wfm.createFileNames:133] Path 'conf' exists.
+'2020-06-18:15:15:12,713  DEBUG    [wfm.createFileNames:133] Path 'forecast' exists.
+'2020-06-18:15:15:12,713  DEBUG    [wfm.createFileNames:133] Path 'data' exists.
+'2020-06-18:15:15:12,714  DEBUG    [wfm.createFileNames:133] Path 'data' exists.
+'2020-06-18:15:15:12,714  DEBUG    [wfm.createFileNames:133] Path 'logs' exists.
+'2020-06-18:15:15:12,714  INFO     [wfm.createFileNames:139] File 'data/call_data-1.xlsx' exists.
+'2020-06-18:15:15:12,714  INFO     [wfm.createFileNames:149] File 'forecast/forecast.xlsx' exists.
+'2020-06-18:15:15:12,715  INFO     [wfm.createFileNames:158] File 'forecast/forecast-summary.json' exists.
+'2020-06-18:15:15:12,715  INFO     [wfm.<module>:59] Workforce Forecast Module started.
+'2020-06-18:15:15:12,715  DEBUG    [wfm.logTimeStamp:276] Elapsed Time 0.008 seconds.
+'2020-06-18:15:15:12,716  INFO     [wfm.<module>:73] Starting import of transaction data. Target: 10.10.0.8:27017.wfm_main_db.history.
+'2020-06-18:15:15:12,730  INFO     [wfm.__init__:55] Using complex spreadsheet for import - transaction data plus KPIs.
+'2020-06-18:15:15:12,731  INFO     [wfm.xlPreProcessComplex:234] Using file data/txn_kpi_history.xlsx as data source.
+'2020-06-18:15:15:15,773  DEBUG    [wfm.xlPreProcessComplex:236] Excel workbook data/txn_kpi_history.xlsx opened.
+'2020-06-18:15:15:15,773  INFO     [wfm.xlPreProcessComplex:245] Found forecast framework sheet 'Framework' in workbook 'data/txn_kpi_history.xlsx'.
+'2020-06-18:15:15:15,774  INFO     [wfm.xlReadFrameworkData:613] Loading forecast framework parameters from Workbook 'data/txn_kpi_history.xlsx', Sheet 'Framework'.
+'2020-06-18:15:15:15,776  INFO     [wfm.helperCheckFrameworkData:211] Checking forecast framework parameters for errors...
+'2020-06-18:15:15:15,776  INFO     [wfm.helperCheckFrameworkData:250] Forecast framework parameter check passed.
+'2020-06-18:15:15:16,307  DEBUG    [wfm.xlPreProcessComplex:346] Service Interval: 60 min, Start Time: 00:00 hours, Number of Days: 90, Intervals per Day: 24.
+'2020-06-18:15:15:16,307  DEBUG    [wfm.xlPreProcessComplex:347] Class wfm_xl fully initialised.
+'2020-06-18:15:15:16,307  INFO     [wfm.xlCheckImportDataValidity:461] Found 90 days that need to be processed.
+'2020-06-18:15:15:16,308  INFO     [wfm.xlCheckImportDataValidity:462] Found 24 intervals in each day.
+'2020-06-18:15:15:16,308  INFO     [wfm.xlCheckImportDataValidity:463] 2160 data points need to to be processed.
+'2020-06-18:15:15:16,308  INFO     [wfm.xlCheckImportDataValidity:464] Import data validity check completed.
+'2020-06-18:15:15:16,308  INFO     [wfm.dbConnect:92] Attempting to connect to MongoDB server on '10.10.0.8' at Port '27017', Connection Timeout = 10000. Socket Timeout = 5000.
+'2020-06-18:15:15:16,311  INFO     [wfm.dbConnect:101] Connection to MongoDB server on '10.10.0.8 at Port '27017' successful.
+'2020-06-18:15:15:16,311  INFO     [wfm.dbImportXLComplex:246] Attempting to connect to MongoDB database 'wfm_main_db'.
+'2020-06-18:15:15:16,325  INFO     [wfm.dbImportXLComplex:253] Connection to MongoDB database 'wfm_main_db' successful.
+'2020-06-18:15:15:16,326  INFO     [wfm.dbImportXLComplex:269] Starting import of historical transaction data from Excel to Database.
+'2020-06-18:15:15:16,327  CRITICAL [wfm.dbImportXLComplex:365] Cell C2 contains a negative value - import aborted.
+'2020-06-18:17:25:41,737  INFO     [wfm.config_logger:67] Workforce Forecast System version 0.3.0 loaded.
+'2020-06-18:17:25:41,758  DEBUG    [wfm.config_logger:68] Log system activated.
+'2020-06-18:17:25:41,764  INFO     [wfm.createFileNames:117] File '/Users/Peter/OneDrive/Development/Python/Workforce/res/wfms-enGB.json' successfully loaded.
+'2020-06-18:17:25:41,765  INFO     [wfm.createFileNames:125] File 'data/framework.json' successfully loaded.
+'2020-06-18:17:25:41,765  DEBUG    [wfm.createFileNames:133] Path 'res' exists.
+'2020-06-18:17:25:41,765  DEBUG    [wfm.createFileNames:133] Path 'conf' exists.
+'2020-06-18:17:25:41,766  DEBUG    [wfm.createFileNames:133] Path 'forecast' exists.
+'2020-06-18:17:25:41,766  DEBUG    [wfm.createFileNames:133] Path 'data' exists.
+'2020-06-18:17:25:41,766  DEBUG    [wfm.createFileNames:133] Path 'data' exists.
+'2020-06-18:17:25:41,767  DEBUG    [wfm.createFileNames:133] Path 'logs' exists.
+'2020-06-18:17:25:41,767  INFO     [wfm.createFileNames:139] File 'data/call_data-1.xlsx' exists.
+'2020-06-18:17:25:41,767  INFO     [wfm.createFileNames:149] File 'forecast/forecast.xlsx' exists.
+'2020-06-18:17:25:41,767  INFO     [wfm.createFileNames:158] File 'forecast/forecast-summary.json' exists.
+'2020-06-18:17:25:41,768  INFO     [wfm.<module>:59] Workforce Forecast Module started.
+'2020-06-18:17:25:41,768  DEBUG    [wfm.logTimeStamp:276] Elapsed Time 0.033 seconds.
+'2020-06-18:17:25:41,865  INFO     [wfm.<module>:73] Starting import of transaction data. Target: 10.10.0.8:27017.wfm_main_db.history.
+'2020-06-18:17:25:41,882  INFO     [wfm.__init__:55] Using complex spreadsheet for import - transaction data plus KPIs.
+'2020-06-18:17:25:41,882  INFO     [wfm.xlPreProcessComplex:234] Using file data/txn_kpi_history.xlsx as data source.
+'2020-06-18:17:25:44,311  DEBUG    [wfm.xlPreProcessComplex:236] Excel workbook data/txn_kpi_history.xlsx opened.
+'2020-06-18:17:25:44,312  INFO     [wfm.xlPreProcessComplex:245] Found forecast framework sheet 'Framework' in workbook 'data/txn_kpi_history.xlsx'.
+'2020-06-18:17:25:44,312  INFO     [wfm.xlReadFrameworkData:613] Loading forecast framework parameters from Workbook 'data/txn_kpi_history.xlsx', Sheet 'Framework'.
+'2020-06-18:17:25:44,313  INFO     [wfm.helperCheckFrameworkData:211] Checking forecast framework parameters for errors...
+'2020-06-18:17:25:44,314  INFO     [wfm.helperCheckFrameworkData:250] Forecast framework parameter check passed.
+'2020-06-18:17:25:44,812  DEBUG    [wfm.xlPreProcessComplex:346] Service Interval: 60 min, Start Time: 00:00 hours, Number of Days: 90, Intervals per Day: 24.
+'2020-06-18:17:25:44,812  DEBUG    [wfm.xlPreProcessComplex:347] Class wfm_xl fully initialised.
+'2020-06-18:17:25:44,812  INFO     [wfm.xlCheckImportDataValidity:461] Found 90 days that need to be processed.
+'2020-06-18:17:25:44,812  INFO     [wfm.xlCheckImportDataValidity:462] Found 24 intervals in each day.
+'2020-06-18:17:25:44,812  INFO     [wfm.xlCheckImportDataValidity:463] 2160 data points need to to be processed.
+'2020-06-18:17:25:44,813  INFO     [wfm.xlCheckImportDataValidity:464] Import data validity check completed.
+'2020-06-18:17:25:44,813  INFO     [wfm.dbConnect:92] Attempting to connect to MongoDB server on '10.10.0.8' at Port '27017', Connection Timeout = 10000. Socket Timeout = 5000.
+'2020-06-18:17:25:44,815  INFO     [wfm.dbConnect:101] Connection to MongoDB server on '10.10.0.8 at Port '27017' successful.
+'2020-06-18:17:25:44,815  INFO     [wfm.dbImportXLComplex:246] Attempting to connect to MongoDB database 'wfm_main_db'.
+'2020-06-18:17:25:44,892  INFO     [wfm.dbImportXLComplex:253] Connection to MongoDB database 'wfm_main_db' successful.
+'2020-06-18:17:25:44,892  INFO     [wfm.dbImportXLComplex:269] Starting import of historical transaction data from Excel to Database.
+'2020-06-18:17:25:46,108  INFO     [wfm.dbImportXLComplex:354] Imported data for 90 days, 0 days omitted, 0 records updated, and 90 records replaced.
+'2020-06-18:17:25:46,110  DEBUG    [wfm.logTimeStamp:276] Elapsed Time 4.375 seconds.
+'2020-06-18:17:25:46,111  INFO     [wfm.<module>:182] Version: 0.3.0 >>> Execution successfully completed. Have a nice Afternoon.
+'2020-06-18:17:25:46,111  INFO     [wfm.logTimeStamp:274] Elapsed Time 4.376 seconds.
+'2020-06-18:17:25:46,111  DEBUG    [wfm.<module>:184] ==============================================

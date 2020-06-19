@@ -97,13 +97,17 @@ def createFileNames (dict, env, logger):
         dict['fs_nopath'] = os.path.join (str.format("{}.{}", str(env['files']['summary']), str(env['files']['ext-json'])))
         dict['fr_nopath'] = os.path.join (str.format("{}.{}", str(env['files']['out-data']), str(env['files']['ext-xl'])))
     
-    f_res               = os.path.join (os.getcwd(), env['paths']['rsrc-path'], str.format("{}-{}.{}", env['files']['language-file'], env['encoding']['language'], env['files']['language-type']))
-    dict['f_resource']  = f_res
-    dict['f_frame']     = os.path.join (env['paths']['input-path'], env['files']['framework'])
-    dict['f_xl_data']   = os.path.join (env['paths']['input-path'], env['files']['in-data'])
-    dict['f_xl_full']   = os.path.join (os.getcwd(), env['paths']['input-path'], env['files']['in-data'])
+    f_res = os.path.join (os.getcwd(), env['paths']['rsrc-path'], str.format("{}-{}.{}", env['files']['language-file'], env['encoding']['language'], env['files']['language-type']))
 
-    # Check if forecast resource file exists and load it.
+    dict['f_resource']      = f_res
+    dict['f_imp_simple']    = os.path.join (env['paths']['import-path'], env['files']['import-simple'])
+    dict['f_imp_complex']   = os.path.join (env['paths']['import-path'], env['files']['import-complex'])
+    dict['f_template']      = os.path.join (env['paths']['import-path'], env['files']['import-template'])
+    dict['f_frame']         = os.path.join (env['paths']['input-path'], env['files']['framework'])
+    dict['f_xl_data']       = os.path.join (env['paths']['input-path'], env['files']['in-data'])
+    dict['f_xl_full']       = os.path.join (os.getcwd(), env['paths']['input-path'], env['files']['in-data'])
+
+# Check if forecast resource file exists and load it.
     if os.path.exists(f_res) == False:
         logger.error(f"Can't find input file {f_res}. Execution cannot continue!")
         raise FileNotFoundError (f_res)
@@ -120,12 +124,13 @@ def createFileNames (dict, env, logger):
         dict['sf_date'] = env['formats']['date']
         logger.info (str.format (dict['res_strings']['info']['0015'], dict['f_frame']))
 
-# Create output directory if it does not already exist
-    if not os.path.exists(env['paths']['output-path']):
-        os.makedirs(env['paths']['output-path'], mode=0o777, exist_ok=True)
-        logger.info (str.format(dict['res_strings']['info']['0016'], env['paths']['output-path']))
-    else:
-        logger.info (str.format(dict['res_strings']['info']['0017'], env['paths']['output-path']))
+# Check that all directories are present, if not create them
+    for path in env['paths']:
+        if not os.path.exists (env['paths'][path]):
+            os.makedirs(env['paths'][path], mode=0o766, exist_ok=True)
+            logger.info (str.format(dict['res_strings']['info']['0016'], env['paths'][path]))
+        else:
+            logger.debug (str.format(dict['res_strings']['info']['0017'], env['paths'][path]))
 
 # Check if forecast input xlsx file exists - if not throw an error
     if os.path.exists(dict['f_xl_data']) == False:
@@ -133,7 +138,7 @@ def createFileNames (dict, env, logger):
     else:
         logger.info (str.format(dict['res_strings']['info']['0018'], dict['f_xl_data']))
 
-# Check if output path exist and if not create it.
+# Check if output files exist and if not create them
     if os.path.exists(dict['f_result']) == False:
         os.chdir (env['paths']['output-path'])
         fp = open (dict['fr_nopath'], "w+")
@@ -142,6 +147,7 @@ def createFileNames (dict, env, logger):
         logger.info (str.format(dict['res_strings']['info']['0019'], dict['f_result']))
     else:
         logger.info (str.format(dict['res_strings']['info']['0018'], dict['f_result']))
+
     if os.path.exists(dict['f_summary']) == False:
         os.chdir (env['paths']['output-path'])
         fp = open (dict['fs_nopath'], "w")
@@ -201,23 +207,46 @@ def createLogSummary (agents, max_date, max_time, max_calls, ec, dict, logger):
     return
 
 #  ================== Helper Function to check framework data for any errors ==================
-def helperCheckFrameworkData (dic_cnf, logger):
+def helperCheckFrameworkData (dic_cnf, env, logger):
     logger.info(dic_cnf['res_strings']['info']['0031'])
     # Check that we are using sound values
-    if (dic_cnf['fw']['SLA'] <= 0):
-        raise ValueError (str.format(dic_cnf['res_strings']['errors']['0007'], dic_cnf['fw']['SLA'], dic_cnf['f_frame']))
+    if dic_cnf['fw']['SLA'] < env['minmax']['sla_min'] or dic_cnf['fw']['SLA'] > 1.0:
+        err = str.format(dic_cnf['res_strings']['errors']['0015'], env['minmax']['sla_min'], 1.0, dic_cnf['fw']['SLA'], dic_cnf['f_frame'], dic_cnf['f_xl_data'])
+        logger.error (err)
+        raise ValueError (err)
     if (dic_cnf['fw']['AnswerTime'] <= 0):
-        raise ValueError (str.format(dic_cnf['res_strings']['errors']['0008'], dic_cnf['fw']['AnswerTime'], dic_cnf['f_frame']))
+        err = str.format(dic_cnf['res_strings']['errors']['0008'], dic_cnf['fw']['AnswerTime'], dic_cnf['f_frame'])
+        logger.error (err)
+        raise ValueError (err)
     if (dic_cnf['fw']['TalkTime'] <= 0):
-        raise ValueError (str.format(dic_cnf['res_strings']['errors']['0009'], dic_cnf['fw']['TalkTime'], dic_cnf['f_frame']))
+        err = str.format(dic_cnf['res_strings']['errors']['0009'], dic_cnf['fw']['TalkTime'], dic_cnf['f_frame'])
+        logger.error (err)
+        raise ValueError (err)
     if (dic_cnf['fw']['ServiceTime'] <= 0):
-        raise ValueError (str.format(dic_cnf['res_strings']['errors']['0010'], dic_cnf['fw']['ServiceTime'], dic_cnf['f_frame']))
+        err = str.format(dic_cnf['res_strings']['errors']['0010'], dic_cnf['fw']['ServiceTime'], dic_cnf['f_frame'])
+        logger.error (err)
+        raise ValueError (err)
     if (dic_cnf['fw']['AfterCallWork'] <= 0):
-        raise ValueError (str.format(dic_cnf['res_strings']['errors']['0011'], dic_cnf['fw']['AfterCallWork'], dic_cnf['f_frame']))
+        err = str.format(dic_cnf['res_strings']['errors']['0011'], dic_cnf['fw']['AfterCallWork'], dic_cnf['f_frame'])
+        logger.error (err)
+        raise ValueError (err)
     if (dic_cnf['fw']['AbandonTime'] <= 0):
-        raise ValueError (str.format(dic_cnf['res_strings']['errors']['0012'], dic_cnf['fw']['AbandonTime'], dic_cnf['f_frame']))
+        err = str.format(dic_cnf['res_strings']['errors']['0012'], dic_cnf['fw']['AbandonTime'], dic_cnf['f_frame'])
+        logger.error (err)
+        raise ValueError (err)
     if (dic_cnf['fw']['MaxWait'] <= 0):
-        raise ValueError (str.format(dic_cnf['res_strings']['errors']['0013'], dic_cnf['fw']['MaxWait'], dic_cnf['f_frame']))
+        err = str.format(dic_cnf['res_strings']['errors']['0013'], dic_cnf['fw']['MaxWait'], dic_cnf['f_frame'])
+        logger.error (err)
+        raise ValueError (err)
+    if dic_cnf['fw']['Availability'] < env['minmax']['avy_min'] or dic_cnf['fw']['Availability'] > 1.0:
+        err = str.format(dic_cnf['res_strings']['errors']['0018'], env['minmax']['avy_min'], 1.0, dic_cnf['fw']['Availability'], dic_cnf['f_frame'], dic_cnf['f_xl_data'])
+        logger.error (err)
+        raise ValueError (err)
+    if dic_cnf['fw']['UtilLimit'] < env['minmax']['utl_min'] or dic_cnf['fw']['UtilLimit'] > 1.0:
+        err = str.format(dic_cnf['res_strings']['errors']['0019'], env['minmax']['utl_min'], 1.0, dic_cnf['fw']['UtilLimit'], dic_cnf['f_frame'], dic_cnf['f_xl_data'])
+        logger.error (err)
+        raise ValueError (err)
+
     logger.info(dic_cnf['res_strings']['info']['0032'])
 
 # ================== Helper function to get exit string like good morning, good afternoon, etc. ==================
